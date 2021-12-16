@@ -1,6 +1,6 @@
 TriggerServerEvent("dp:CheckVersion")
 
-rightPosition = {x = 1450, y = 100}
+rightPosition = {x = 1450, y = 150}
 leftPosition = {x = 0, y = 100}
 menuPosition = {x = 0, y = 200}
 
@@ -24,7 +24,7 @@ else
 end
 
 _menuPool = NativeUI.CreatePool()
-mainMenu = NativeUI.CreateMenu("dp Emotes", "", menuPosition["x"], menuPosition["y"], Menuthing, Menuthing)
+mainMenu = NativeUI.CreateMenu("", "", menuPosition["x"], menuPosition["y"], Menuthing, Menuthing)
 _menuPool:Add(mainMenu)
 
 function ShowNotification(text)
@@ -254,23 +254,16 @@ function AddFaceMenu(menu)
 end
 
 function AddInfoMenu(menu)
-    if not UpdateAvailable then
-      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.7.3)", "", Menuthing, Menuthing)
-    else
-      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdateav'], Config.Languages[lang]['infoupdateavtext'], "", Menuthing, Menuthing)
-    end
-    contact = NativeUI.CreateItem(Config.Languages[lang]['suggestions'], Config.Languages[lang]['suggestionsinfo'])
-    u170 = NativeUI.CreateItem("1.7.0", "Added /emotebind [key] [emote]!")
-    u165 = NativeUI.CreateItem("1.6.5", "Updated camera/phone/pee/beg, added makeitrain/dance(glowstick/horse).")
-    u160 = NativeUI.CreateItem("1.6.0", "Added shared emotes /nearby, or in menu, also fixed some emotes!")
-    u151 = NativeUI.CreateItem("1.5.1", "Added /walk and /walks, for walking styles without menu")
-    u150 = NativeUI.CreateItem("1.5.0", "Added Facial Expressions menu (if enabled by server owner)")
-    infomenu:AddItem(contact)
-    infomenu:AddItem(u170)
-    infomenu:AddItem(u165)
-    infomenu:AddItem(u160)
-    infomenu:AddItem(u151)
-    infomenu:AddItem(u150)
+	local infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "~y~ ¡Links importantes de la comunidad! ~h~~w~mancos.es ", "", Menuthing, Menuthing)
+	uweb = NativeUI.CreateItem("💚 ~g~ Mancos - Web 💚", "~g~ ¡Entra en nuestra Web y presentate! ~h~~w~mancos.es")
+	udiscord = NativeUI.CreateItem("💜 ~p~ Mancos - Discord 💜", "~p~ ¡Entra en nuestro Discord y enterate de lo último! ~h~~w~mancos.es/discord")
+	uinsta = NativeUI.CreateItem("🧡 ~o~ Mancos - Instagram 🧡", "~o~ ¡Siguenos en Instagram y enterate de lo que pase en la ciudad! ~h~~w~@mancos.es")
+	utwitter = NativeUI.CreateItem("💙 ~b~ Mancos - Twitter 💙", "~b~ ¡Siguenos en Twitter y enterate de nuestros eventos y mucho más! ~h~~w~@Mancos_es")
+	utwitter = NativeUI.CreateItem("💚 ~r~ AGRADECIMIENTO 💚", "~r~Gracias a ~g~@Pixel?#1417 ~r~por la traducción.")
+	infomenu:AddItem(uweb)
+	infomenu:AddItem(udiscord)
+	infomenu:AddItem(uinsta)
+	infomenu:AddItem(utwitter)
 end
 
 function OpenEmoteMenu()

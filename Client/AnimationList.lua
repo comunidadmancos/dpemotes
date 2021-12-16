@@ -1,102 +1,104 @@
+local QueServer = GetConvar("server_number", "1")
+
 DP = {}
 
 DP.Expressions = {
-   ["Angry"] = {"Expression", "mood_angry_1"},
-   ["Drunk"] = {"Expression", "mood_drunk_1"},
-   ["Dumb"] = {"Expression", "pose_injured_1"},
-   ["Electrocuted"] = {"Expression", "electrocuted_1"},
-   ["Grumpy"] = {"Expression", "effort_1"},
-   ["Grumpy2"] = {"Expression", "mood_drivefast_1"},
-   ["Grumpy3"] = {"Expression", "pose_angry_1"},
-   ["Happy"] = {"Expression", "mood_happy_1"},
-   ["Injured"] = {"Expression", "mood_injured_1"},
-   ["Joyful"] = {"Expression", "mood_dancing_low_1"},
-   ["Mouthbreather"] = {"Expression", "smoking_hold_1"},
-   ["Never Blink"] = {"Expression", "pose_normal_1"},
-   ["One Eye"] = {"Expression", "pose_aiming_1"},
-   ["Shocked"] = {"Expression", "shocked_1"},
-   ["Shocked2"] = {"Expression", "shocked_2"},
-   ["Sleeping"] = {"Expression", "mood_sleeping_1"},
-   ["Sleeping2"] = {"Expression", "dead_1"},
-   ["Sleeping3"] = {"Expression", "dead_2"},
-   ["Smug"] = {"Expression", "mood_smug_1"},
-   ["Speculative"] = {"Expression", "mood_aiming_1"},
-   ["Stressed"] = {"Expression", "mood_stressed_1"},
-   ["Sulking"] = {"Expression", "mood_sulk_1"},
-   ["Weird"] = {"Expression", "effort_2"},
-   ["Weird2"] = {"Expression", "effort_3"},
+   ["Enfadado"] = {"Expression", "mood_angry_1"},
+   ["Borracho"] = {"Expression", "mood_drunk_1"},
+   ["Tonto"] = {"Expression", "pose_injured_1"},
+   ["Electrocutado"] = {"Expression", "electrocuted_1"},
+   ["Gruñon"] = {"Expression", "effort_1"},
+   ["Gruñon2"] = {"Expression", "mood_drivefast_1"},
+   ["Gruñon3"] = {"Expression", "pose_angry_1"},
+   ["Feliz"] = {"Expression", "mood_happy_1"},
+   ["Lesionado"] = {"Expression", "mood_injured_1"},
+   ["Alegre"] = {"Expression", "mood_dancing_low_1"},
+   ["Empanado"] = {"Expression", "smoking_hold_1"},
+   ["Nunca parpadear"] = {"Expression", "pose_normal_1"},
+   ["Un ojo"] = {"Expression", "pose_aiming_1"},
+   ["Conmocionado"] = {"Expression", "shocked_1"},
+   ["Conmocionado2"] = {"Expression", "shocked_2"},
+   ["Dormido"] = {"Expression", "mood_sleeping_1"},
+   ["Dormido2"] = {"Expression", "dead_1"},
+   ["Dormido3"] = {"Expression", "dead_2"},
+   ["Presumido"] = {"Expression", "mood_smug_1"},
+   ["Especulativo"] = {"Expression", "mood_aiming_1"},
+   ["Estresado"] = {"Expression", "mood_stressed_1"},
+   ["Enfuruñado"] = {"Expression", "mood_sulk_1"},
+   ["Extraño"] = {"Expression", "effort_2"},
+   ["Extraño2"] = {"Expression", "effort_3"},
 }
 
 DP.Walks = {
   ["Alien"] = {"move_m@alien"},
-  ["Armored"] = {"anim_group_move_ballistic"},
-  ["Arrogant"] = {"move_f@arrogant@a"},
-  ["Brave"] = {"move_m@brave"},
+  ["Escocido"] = {"anim_group_move_ballistic"},
+  ["Arrogante"] = {"move_f@arrogant@a"},
+  ["Valiente"] = {"move_m@brave"},
   ["Casual"] = {"move_m@casual@a"},
   ["Casual2"] = {"move_m@casual@b"},
   ["Casual3"] = {"move_m@casual@c"},
   ["Casual4"] = {"move_m@casual@d"},
   ["Casual5"] = {"move_m@casual@e"},
   ["Casual6"] = {"move_m@casual@f"},
-  ["Chichi"] = {"move_f@chichi"},
-  ["Confident"] = {"move_m@confident"},
-  ["Cop"] = {"move_m@business@a"},
-  ["Cop2"] = {"move_m@business@b"},
-  ["Cop3"] = {"move_m@business@c"},
-  ["Default Female"] = {"move_f@multiplayer"},
-  ["Default Male"] = {"move_m@multiplayer"},
-  ["Drunk"] = {"move_m@drunk@a"},
-  ["Drunk"] = {"move_m@drunk@slightlydrunk"},
-  ["Drunk2"] = {"move_m@buzzed"},
-  ["Drunk3"] = {"move_m@drunk@verydrunk"},
-  ["Femme"] = {"move_f@femme@"},
-  ["Fire"] = {"move_characters@franklin@fire"},
-  ["Fire2"] = {"move_characters@michael@fire"},
-  ["Fire3"] = {"move_m@fire"},
-  ["Flee"] = {"move_f@flee@a"},
+  ["Presumida"] = {"move_f@chichi"},
+  ["Confidente"] = {"move_m@confident"},
+  ["Policia"] = {"move_m@business@a"},
+  ["Policia2"] = {"move_m@business@b"},
+  ["Policia3"] = {"move_m@business@c"},
+  ["Predeterminado femenino"] = {"move_f@multiplayer"},
+  ["Predeterminado masculino"] = {"move_m@multiplayer"},
+  ["Borracho"] = {"move_m@drunk@slightlydrunk"},
+  ["Borracho1"] = {"move_m@drunk@a"},
+  ["Borracho2"] = {"move_m@buzzed"},
+  ["Borracho3"] = {"move_m@drunk@verydrunk"},
+  ["Femenino"] = {"move_f@femme@"},
+  ["Ardiente"] = {"move_characters@franklin@fire"},
+  ["Ardiente2"] = {"move_characters@michael@fire"},
+  ["Ardiente3"] = {"move_m@fire"},
+  ["Chica recta"] = {"move_f@flee@a"},
   ["Franklin"] = {"move_p_m_one"},
   ["Gangster"] = {"move_m@gangster@generic"},
   ["Gangster2"] = {"move_m@gangster@ng"},
   ["Gangster3"] = {"move_m@gangster@var_e"},
   ["Gangster4"] = {"move_m@gangster@var_f"},
   ["Gangster5"] = {"move_m@gangster@var_i"},
-  ["Grooving"] = {"anim@move_m@grooving@"},
-  ["Guard"] = {"move_m@prison_gaurd"},
-  ["Handcuffs"] = {"move_m@prisoner_cuffed"},
-  ["Heels"] = {"move_f@heels@c"},
-  ["Heels2"] = {"move_f@heels@d"},
-  ["Hiking"] = {"move_m@hiking"},
+  ["Pasota"] = {"anim@move_m@grooving@"},
+  ["Guardia"] = {"move_m@prison_gaurd"},
+  ["Esposado"] = {"move_m@prisoner_cuffed"},
+  ["Tacones"] = {"move_f@heels@c"},
+  ["Tacones2"] = {"move_f@heels@d"},
+  ["Excursionista"] = {"move_m@hiking"},
   ["Hipster"] = {"move_m@hipster@a"},
-  ["Hobo"] = {"move_m@hobo@a"},
-  ["Hurry"] = {"move_f@hurry@a"},
-  ["Janitor"] = {"move_p_m_zero_janitor"},
-  ["Janitor2"] = {"move_p_m_zero_slow"},
-  ["Jog"] = {"move_m@jog@"},
+  ["Sin ganas"] = {"move_m@hobo@a"},
+  ["Con prisa"] = {"move_f@hurry@a"},
+  ["Chungo"] = {"move_p_m_zero_janitor"},
+  ["Chungo2"] = {"move_p_m_zero_slow"},
+  ["Empujado"] = {"move_m@jog@"},
   ["Lemar"] = {"anim_group_move_lemar_alley"},
   ["Lester"] = {"move_heist_lester"},
   ["Lester2"] = {"move_lester_caneup"},
-  ["Maneater"] = {"move_f@maneater"},
+  ["Chula pija"] = {"move_f@maneater"},
   ["Michael"] = {"move_ped_bucket"},
-  ["Money"] = {"move_m@money"},
-  ["Muscle"] = {"move_m@muscle@a"},
-  ["Posh"] = {"move_m@posh@"},
-  ["Posh2"] = {"move_f@posh@"},
-  ["Quick"] = {"move_m@quick"},
-  ["Runner"] = {"female_fast_runner"},
-  ["Sad"] = {"move_m@sad@a"},
-  ["Sassy"] = {"move_m@sassy"},
-  ["Sassy2"] = {"move_f@sassy"},
-  ["Scared"] = {"move_f@scared"},
+  ["Rico"] = {"move_m@money"},
+  ["Prepotente lento"] = {"move_m@muscle@a"},
+  ["Elegante"] = {"move_m@posh@"},
+  ["Elegante2"] = {"move_f@posh@"},
+  ["Rapido"] = {"move_m@quick"},
+  ["Chica runner"] = {"female_fast_runner"},
+  ["Triste"] = {"move_m@sad@a"},
+  ["Descarado"] = {"move_m@sassy"},
+  ["Descarado2"] = {"move_f@sassy"},
+  ["Asustado"] = {"move_f@scared"},
   ["Sexy"] = {"move_f@sexy@a"},
-  ["Shady"] = {"move_m@shadyped@a"},
-  ["Slow"] = {"move_characters@jimmy@slow@"},
+  ["Chulo mirando"] = {"move_m@shadyped@a"},
+  ["Lento"] = {"move_characters@jimmy@slow@"},
   ["Swagger"] = {"move_m@swagger"},
-  ["Tough"] = {"move_m@tough_guy@"},
-  ["Tough2"] = {"move_f@tough_guy@"},
-  ["Trash"] = {"clipset@move@trash_fast_turn"},
-  ["Trash2"] = {"missfbi4prepp1_garbageman"},
+  ["Duro"] = {"move_m@tough_guy@"},
+  ["Duro2"] = {"move_f@tough_guy@"},
+  ["Basura"] = {"clipset@move@trash_fast_turn"},
+  ["Basura2"] = {"missfbi4prepp1_garbageman"},
   ["Trevor"] = {"move_p_m_two"},
-  ["Wide"] = {"move_m@bag"},
+  ["Flipado"] = {"move_m@bag"},
   -- I cant get these to work for some reason, if anyone knows a fix lmk
   --["Caution"] = {"move_m@caution"},
   --["Chubby"] = {"anim@move_m@chubby@a"},
@@ -110,214 +112,282 @@ DP.Walks = {
 }
 
 DP.Shared = {
-   --[emotename] = {dictionary, animation, displayname, targetemotename, additionalanimationoptions}
-   -- you dont have to specify targetemoteanem, if you do dont it will just play the same animation on both.
-   -- targetemote is used for animations that have a corresponding animation to the other player.
-   ["handshake"] = {"mp_ped_interaction", "handshake_guy_a", "Handshake", "handshake2", AnimationOptions =
-   {
+    --[emotename] = {dictionary, animation, displayname, targetemotename, additionalanimationoptions}
+    -- you dont have to specify targetemoteanem, if you do dont it will just play the same animation on both.
+    -- targetemote is used for animations that have a corresponding animation to the other player.
+	["sexodar1"] = {"misscarsteal2pimpsex", "shagloop_pimp", "Percutir", "sexorecibir1", AnimationOptions =
+		{
+			EmoteMoving = false,
+			EmoteLoop = true,
+			SyncOffsetFront = 0.35
+		}
+	},
+	["sexorecibir1"] = {"misscarsteal2pimpsex", "shagloop_hooker", "Ser percutido/a", "sexodar1", AnimationOptions =
+		{
+			EmoteMoving = false,
+			EmoteLoop = true,
+			SyncOffsetFront = 0.35
+		}
+	},
+	["mamadarecibir"] = {"misscarsteal2pimpsex", "pimpsex_punter", "Mamada (recibir)", "mamadadar", AnimationOptions =
+		{
+			EmoteMoving = false,
+			EmoteDuration = 30000,
+			SyncOffsetFront = 0.63
+		}
+	},
+	["mamadadar"] = {"misscarsteal2pimpsex", "pimpsex_hooker", "Mamada (dar)", "mamadarecibir", AnimationOptions =
+		{
+			EmoteMoving = false,
+			EmoteDuration = 30000,
+			SyncOffsetFront = 0.63
+		}
+	},
+    ["apretonmanos1"] = {"mp_ped_interaction", "handshake_guy_a", "Chocar la mano", "apretonmanos2", AnimationOptions =
+    {
+        EmoteMoving = true,
+        EmoteDuration = 3000,
+        SyncOffsetFront = 0.9
+    }},
+    ["apretonmanos2"] = {"mp_ped_interaction", "handshake_guy_b", "Chocar la mano 2", "apretonmanos1", AnimationOptions =
+    {
+        EmoteMoving = true,
+        EmoteDuration = 3000
+    }},
+    ["abrazo1"] = {"mp_ped_interaction", "kisses_guy_a", "Abrazo", "abrazo2", AnimationOptions =
+    {
+        EmoteMoving = false,
+        EmoteDuration = 5000,
+        SyncOffsetFront = 1.05,
+    }},
+    ["abrazo2"] = {"mp_ped_interaction", "kisses_guy_b", "Abrazo 2", "abrazo1", AnimationOptions =
+    {
+        EmoteMoving = false,
+        EmoteDuration = 5000,
+        SyncOffsetFront = 1.13
+    }},
+    ["bro"] = {"mp_ped_interaction", "hugs_guy_a", "Bro", "bro2", AnimationOptions =
+    {
+         SyncOffsetFront = 1.14
+    }},
+    ["bro2"] = {"mp_ped_interaction", "hugs_guy_b", "Bro 2", "bro", AnimationOptions =
+    {
+         SyncOffsetFront = 1.14
+    }},
+    ["abrazaditos1a"] = {"misscarsteal2chad_goodbye", "chad_armsaround_chad", "Abrazadit@s tiernamente 1 (A)", "abrazaditos1b", AnimationOptions =
+    {
+        EmoteMoving = false,
+        EmoteLoop = true,
+        SyncOffsetFront = 0.50
+    }},
+    ["abrazaditos1b"] = {"misscarsteal2chad_goodbye", "chad_armsaround_girl", "Abrazadit@s tiernamente 1 (B)", "abrazaditos1a", AnimationOptions =
+    {
+        EmoteMoving = false,
+        EmoteLoop = true,
+        SyncOffsetFront = 0.50
+    }},
+    ["abrazaditos2a"] = {"misscarsteal2chad_goodbye", "chad_idle_chad", "Abrazadit@s tiernamente 2 (A)", "abrazaditos2b", AnimationOptions =
+    {
+        EmoteMoving = false,
+        EmoteLoop = true,
+        SyncOffsetFront = 0.50
+    }},
+    ["abrazaditos2b"] = {"misscarsteal2chad_goodbye", "chad_idle_girl", "Abrazadit@s tiernamente 2 (B)", "abrazaditos2a", AnimationOptions =
+    {
+        EmoteMoving = false,
+        EmoteLoop = true,
+        SyncOffsetFront = 0.50
+    }},
+ 
+    ["comerboca1"] = {"hs3_ext-20", "cs_lestercrest_3_dual-20", "Comer boca (A)", "comerboca2", AnimationOptions =
+    {
+        EmoteMoving = false,
+        EmoteDuration = 4500,
+        SyncOffsetFront = 0.45
+    }},
+ 
+    ["comerboca2"] = {"hs3_ext-20", "csb_georginacheng_dual-20", "Comer boca (B)", "comerboca1", AnimationOptions =
+    {
+        EmoteMoving = false,
+        EmoteDuration = 4500,
+        SyncOffsetFront = 0.45
+    }},
+ 
+    ["dar1"] = {"mp_common", "givetake1_a", "Dar la mano", "dar1", AnimationOptions =
+    {
+        EmoteMoving = true,
+        EmoteDuration = 2000
+    }},
+    ["dar2"] = {"mp_common", "givetake1_b", "Dar la mano 2", "dar2", AnimationOptions =
+    {
+        EmoteMoving = true,
+        EmoteDuration = 2000
+    }},
+    ["batear"] = {"anim@arena@celeb@flat@paired@no_props@", "baseball_a_player_a", "Batear", "lanzarpelota"},
+    ["lanzarpelota"] = {"anim@arena@celeb@flat@paired@no_props@", "baseball_a_player_b", "Lanzar bola de beisbol", "batear"},
+    ["atracar"] = {"random@countryside_gang_fight", "biker_02_stickup_loop", "Atracar", "seratracado", AnimationOptions =
+    {
+        EmoteLoop = true,
+        EmoteMoving = true,
+    }},
+    ["seratracado"] = {"missminuteman_1ig_2", "handsup_base", "Ser atracado", "atracar", AnimationOptions =
+    {
        EmoteMoving = true,
-       EmoteDuration = 3000,
-       SyncOffsetFront = 0.9
-   }},
-   ["handshake2"] = {"mp_ped_interaction", "handshake_guy_b", "Handshake 2", "handshake", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 3000
-   }},
-   ["hug"] = {"mp_ped_interaction", "kisses_guy_a", "Hug", "hug2", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 5000,
-       SyncOffsetFront = 1.05,
-   }},
-   ["hug2"] = {"mp_ped_interaction", "kisses_guy_b", "Hug 2", "hug", AnimationOptions =
-   {
-       EmoteMoving = false,
-       EmoteDuration = 5000,
-       SyncOffsetFront = 1.13
-   }},
-   ["bro"] = {"mp_ped_interaction", "hugs_guy_a", "Bro", "bro2", AnimationOptions =
-   {
-        SyncOffsetFront = 1.14
-   }},
-   ["bro2"] = {"mp_ped_interaction", "hugs_guy_b", "Bro 2", "bro", AnimationOptions =
-   {
-        SyncOffsetFront = 1.14
-   }},
-   ["give"] = {"mp_common", "givetake1_a", "Give", "give2", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 2000
-   }},
-   ["give2"] = {"mp_common", "givetake1_b", "Give 2", "give", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 2000
-   }},
-   ["baseball"] = {"anim@arena@celeb@flat@paired@no_props@", "baseball_a_player_a", "Baseball", "baseballthrow"},
-   ["baseballthrow"] = {"anim@arena@celeb@flat@paired@no_props@", "baseball_a_player_b", "Baseball Throw", "baseball"},
-   ["stickup"] = {"random@countryside_gang_fight", "biker_02_stickup_loop", "Stick Up", "stickupscared", AnimationOptions =
-   {
        EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["stickupscared"] = {"missminuteman_1ig_2", "handsup_base", "Stickup Scared", "stickup", AnimationOptions =
-   {
-      EmoteMoving = true,
-      EmoteLoop = true,
-   }},
-   ["punch"] = {"melee@unarmed@streamed_variations", "plyr_takedown_rear_lefthook", "Punch", "punched"},
-   ["punched"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_cross_r", "Punched", "punch"},
-   ["headbutt"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_headbutt", "Headbutt", "headbutted"},
-   ["headbutted"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_headbutt", "Headbutted", "headbutt"},
-   ["slap2"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_backslap", "Slap 2", "slapped2", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-       EmoteDuration = 2000,
-   }},
-   ["slap"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_slap", "Slap", "slapped", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-       EmoteDuration = 2000,
-   }},
-   ["slapped"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_slap", "Slapped", "slap"},
-   ["slapped2"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_backslap", "Slapped 2", "slap2"},
+    }},
+    ["puñetazo"] = {"melee@unarmed@streamed_variations", "plyr_takedown_rear_lefthook", "Puñetazo", "recibirpuñetazo"},
+    ["recibirpuñetazo"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_cross_r", "Recibir puñetazo", "puñetazo"},
+    ["cabezazo"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_headbutt", "Cabezazo", "recibircabezazo"},
+    ["recibircabezazo"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_headbutt", "Recibir cabezazo", "cabezazo"},
+    ["bofetada2"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_backslap", "Bofetada 2", "recibirbofetada2", AnimationOptions =
+    {
+        EmoteLoop = true,
+        EmoteMoving = true,
+        EmoteDuration = 2000,
+    }},
+    ["bofetada1"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_slap", "Bofetada", "recibirbofetada1", AnimationOptions =
+    {
+        EmoteLoop = true,
+        EmoteMoving = true,
+        EmoteDuration = 2000,
+    }},
+    ["recibirbofetada1"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_slap", "Recibir bofetada", "bofetada1"},
+    ["recibirbofetada2"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_backslap", "Recibir bofetada 2", "bofetada2"},
 }
 
+
 DP.Dances = {
-   ["dancef"] = {"anim@amb@nightclub@dancers@solomun_entourage@", "mi_dance_facedj_17_v1_female^1", "Dance F", AnimationOptions =
+   ["bailef"] = {"anim@amb@nightclub@dancers@solomun_entourage@", "mi_dance_facedj_17_v1_female^1", "Baile Femenino", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancef2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center", "Dance F2", AnimationOptions =
+   ["bailef2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center", "Baile Femenino 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancef3"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center_up", "Dance F3", AnimationOptions =
+   ["bailef3"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center_up", "Baile Femenino 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancef4"] = {"anim@amb@nightclub@dancers@crowddance_facedj@hi_intensity", "hi_dance_facedj_09_v2_female^1", "Dance F4", AnimationOptions =
+   ["bailef4"] = {"anim@amb@nightclub@dancers@crowddance_facedj@hi_intensity", "hi_dance_facedj_09_v2_female^1", "Baile Femenino 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancef5"] = {"anim@amb@nightclub@dancers@crowddance_facedj@hi_intensity", "hi_dance_facedj_09_v2_female^3", "Dance F5", AnimationOptions =
+   ["bailef5"] = {"anim@amb@nightclub@dancers@crowddance_facedj@hi_intensity", "hi_dance_facedj_09_v2_female^3", "Baile Femenino 5", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancef6"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center_up", "Dance F6", AnimationOptions =
+   ["bailef6"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "high_center_up", "Baile Femenino 6", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceslow2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "low_center", "Dance Slow 2", AnimationOptions =
+   ["bailelento1"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "low_center", "Baile lento 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceslow3"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "low_center_down", "Dance Slow 3", AnimationOptions =
+   ["bailelento2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "low_center", "Baile lento 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceslow4"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "low_center", "Dance Slow 4", AnimationOptions =
+   ["bailelento3"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "low_center_down", "Baile lento 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance"] = {"anim@amb@nightclub@dancers@podium_dancers@", "hi_dance_facedj_17_v2_male^5", "Dance", AnimationOptions =
+   ["bailelento4"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "low_center", "Baile lento 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance2"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "high_center_down", "Dance 2", AnimationOptions =
+   ["baile1"] = {"anim@amb@nightclub@dancers@podium_dancers@", "hi_dance_facedj_17_v2_male^5", "Baile 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance3"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", "high_center", "Dance 3", AnimationOptions =
+   ["baile2"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "high_center_down", "Baile 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance4"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "high_center_up", "Dance 4", AnimationOptions =
+   ["baile3"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", "high_center", "Baile 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceupper"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "high_center", "Dance Upper", AnimationOptions =
+   ["baile4"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "high_center_up", "Baile 4", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["bailesubidon1"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "high_center", "Baile subidón 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["danceupper2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "high_center_up", "Dance Upper 2", AnimationOptions =
+   ["bailesubidon2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "high_center_up", "Baile subidón 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["danceshy"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", "low_center", "Dance Shy", AnimationOptions =
+   ["bailetimido1"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", "low_center", "Baile tímido 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceshy2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "low_center_down", "Dance Shy 2", AnimationOptions =
+   ["bailetimido2"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_b@", "low_center_down", "Baile tímido 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["danceslow"] = {"anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", "low_center", "Dance Slow", AnimationOptions =
+   ["bailetonto9"] = {"rcmnigel1bnmt_1b", "dance_loop_tyler", "Baile tonto 9", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly9"] = {"rcmnigel1bnmt_1b", "dance_loop_tyler", "Dance Silly 9", AnimationOptions =
+   ["baile6"] = {"misschinese2_crystalmazemcs1_cs", "dance_loop_tao", "Baile 6", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance6"] = {"misschinese2_crystalmazemcs1_cs", "dance_loop_tao", "Dance 6", AnimationOptions =
+   ["baile7"] = {"misschinese2_crystalmazemcs1_ig", "dance_loop_tao", "Baile 7", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance7"] = {"misschinese2_crystalmazemcs1_ig", "dance_loop_tao", "Dance 7", AnimationOptions =
+   ["baile8"] = {"missfbi3_sniping", "dance_m_default", "Baile 8", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance8"] = {"missfbi3_sniping", "dance_m_default", "Dance 8", AnimationOptions =
+   ["bailetonto1"] = {"special_ped@mountain_dancer@monologue_3@monologue_3a", "mnt_dnc_buttwag", "Baile tonto 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly"] = {"special_ped@mountain_dancer@monologue_3@monologue_3a", "mnt_dnc_buttwag", "Dance Silly", AnimationOptions =
+   ["bailetonto2"] = {"move_clown@p_m_zero_idles@", "fidget_short_dance", "Baile tonto 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly2"] = {"move_clown@p_m_zero_idles@", "fidget_short_dance", "Dance Silly 2", AnimationOptions =
+   ["bailetonto3"] = {"move_clown@p_m_two_idles@", "fidget_short_dance", "Baile tonto 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly3"] = {"move_clown@p_m_two_idles@", "fidget_short_dance", "Dance Silly 3", AnimationOptions =
+   ["bailetonto4"] = {"anim@amb@nightclub@lazlow@hi_podium@", "danceidle_hi_11_buttwiggle_b_laz", "Baile tonto 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly4"] = {"anim@amb@nightclub@lazlow@hi_podium@", "danceidle_hi_11_buttwiggle_b_laz", "Dance Silly 4", AnimationOptions =
+   ["bailetonto5"] = {"timetable@tracy@ig_5@idle_a", "idle_a", "Baile tonto 5", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly5"] = {"timetable@tracy@ig_5@idle_a", "idle_a", "Dance Silly 5", AnimationOptions =
+   ["bailetonto6"] = {"timetable@tracy@ig_8@idle_b", "idle_d", "Baile tonto 6", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dancesilly6"] = {"timetable@tracy@ig_8@idle_b", "idle_d", "Dance Silly 6", AnimationOptions =
+   ["baile9"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "med_center_up", "Baile 9", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["dance9"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "med_center_up", "Dance 9", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["dancesilly8"] = {"anim@mp_player_intcelebrationfemale@the_woogie", "the_woogie", "Dance Silly 8", AnimationOptions =
+   ["bailetonto8"] = {"anim@mp_player_intcelebrationfemale@the_woogie", "the_woogie", "Baile tonto 8", AnimationOptions =
    {
        EmoteLoop = true
    }},
-   ["dancesilly7"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_b@", "high_center", "Dance Silly 7", AnimationOptions =
+   ["bailetonto7"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_b@", "high_center", "Baile tonto 7", AnimationOptions =
    {
        EmoteLoop = true
    }},
-   ["dance5"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_a@", "med_center", "Dance 5", AnimationOptions =
+   ["baile5"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_a@", "med_center", "Baile 5", AnimationOptions =
    {
        EmoteLoop = true
    }},
-   ["danceglowstick"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_13_mi_hi_sexualgriding_laz", "Dance Glowsticks", AnimationOptions =
+   ["bailepaloluz1"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_13_mi_hi_sexualgriding_laz", "Baile con palos de luz 1", AnimationOptions =
    {
        Prop = 'ba_prop_battle_glowstick_01',
        PropBone = 28422,
@@ -328,7 +398,7 @@ DP.Dances = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["danceglowstick2"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_12_mi_hi_bootyshake_laz", "Dance Glowsticks 2", AnimationOptions =
+   ["bailepaloluz2"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_12_mi_hi_bootyshake_laz", "Baile con palos de luz 2", AnimationOptions =
    {
        Prop = 'ba_prop_battle_glowstick_01',
        PropBone = 28422,
@@ -338,7 +408,7 @@ DP.Dances = {
        SecondPropPlacement = {0.0700,0.0900,0.0,-120.0,-20.0},
        EmoteLoop = true,
    }},
-   ["danceglowstick3"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_09_mi_hi_bellydancer_laz", "Dance Glowsticks 3", AnimationOptions =
+   ["bailepaloluz3"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_09_mi_hi_bellydancer_laz", "Baile con palos de luz 3", AnimationOptions =
    {
        Prop = 'ba_prop_battle_glowstick_01',
        PropBone = 28422,
@@ -348,7 +418,7 @@ DP.Dances = {
        SecondPropPlacement = {0.0700,0.0900,0.0,-120.0,-20.0},
        EmoteLoop = true,
    }},
-   ["dancehorse"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "dancecrowd_li_15_handup_laz", "Dance Horse", AnimationOptions =
+   ["bailecaballo1"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "dancecrowd_li_15_handup_laz", "Baile con caballo 1", AnimationOptions =
    {
        Prop = "ba_prop_battle_hobby_horse",
        PropBone = 28422,
@@ -356,14 +426,14 @@ DP.Dances = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["dancehorse2"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "crowddance_hi_11_handup_laz", "Dance Horse 2", AnimationOptions =
+   ["bailecaballo2"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "crowddance_hi_11_handup_laz", "Baile con caballo 2", AnimationOptions =
    {
        Prop = "ba_prop_battle_hobby_horse",
        PropBone = 28422,
        PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
        EmoteLoop = true,
    }},
-   ["dancehorse3"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "dancecrowd_li_11_hu_shimmy_laz", "Dance Horse 3", AnimationOptions =
+   ["bailecaballo3"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "dancecrowd_li_11_hu_shimmy_laz", "Baile con caballo 3", AnimationOptions =
    {
        Prop = "ba_prop_battle_hobby_horse",
        PropBone = 28422,
@@ -373,198 +443,198 @@ DP.Dances = {
 }
 
 DP.Emotes = {
-   ["drink"] = {"mp_player_inteat@pnq", "loop", "Drink", AnimationOptions =
+   ["beber"] = {"mp_player_inteat@pnq", "loop", "Beber", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 2500,
    }},
-   ["beast"] = {"anim@mp_fm_event@intro", "beast_transform", "Beast", AnimationOptions =
+   ["bestia"] = {"anim@mp_fm_event@intro", "beast_transform", "Bestia", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 5000,
    }},
-   ["chill"] = {"switch@trevor@scares_tramp", "trev_scares_tramp_idle_tramp", "Chill", AnimationOptions =
+   ["chill"] = {"switch@trevor@scares_tramp", "trev_scares_tramp_idle_tramp", "Tranquilo", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["cloudgaze"] = {"switch@trevor@annoys_sunbathers", "trev_annoys_sunbathers_loop_girl", "Cloudgaze", AnimationOptions =
+   ["bocarriba1"] = {"switch@trevor@annoys_sunbathers", "trev_annoys_sunbathers_loop_girl", "Tumbarse bocarriba 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["cloudgaze2"] = {"switch@trevor@annoys_sunbathers", "trev_annoys_sunbathers_loop_guy", "Cloudgaze 2", AnimationOptions =
+   ["bocarriba2"] = {"switch@trevor@annoys_sunbathers", "trev_annoys_sunbathers_loop_guy", "Tumbarse bocarriba 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["prone"] = {"missfbi3_sniping", "prone_dave", "Prone", AnimationOptions =
+   ["bocabajo"] = {"missfbi3_sniping", "prone_dave", "Tumbarse bocabajo con movil", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["pullover"] = {"misscarsteal3pullover", "pull_over_right", "Pullover", AnimationOptions =
+   ["empujar"] = {"misscarsteal3pullover", "pull_over_right", "Empujar", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 1300,
    }},
-   ["idle"] = {"anim@heists@heist_corona@team_idles@male_a", "idle", "Idle", AnimationOptions =
+   ["ocioso1"] = {"anim@heists@heist_corona@team_idles@male_a", "idle", "Ocioso 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["idle8"] = {"amb@world_human_hang_out_street@male_b@idle_a", "idle_b", "Idle 8"},
-   ["idle9"] = {"friends@fra@ig_1", "base_idle", "Idle 9", AnimationOptions =
+   ["ocioso8"] = {"amb@world_human_hang_out_street@male_b@idle_a", "idle_b", "Ocioso 8"},
+   ["ocioso9"] = {"friends@fra@ig_1", "base_idle", "Ocioso 9", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["idle10"] = {"mp_move@prostitute@m@french", "idle", "Idle 10", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["idle11"] = {"random@countrysiderobbery", "idle_a", "Idle 11", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idle2"] = {"anim@heists@heist_corona@team_idles@female_a", "idle", "Idle 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idle3"] = {"anim@heists@humane_labs@finale@strip_club", "ped_b_celebrate_loop", "Idle 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idle4"] = {"anim@mp_celebration@idles@female", "celebration_idle_f_a", "Idle 4", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idle5"] = {"anim@mp_corona_idles@female_b@idle_a", "idle_a", "Idle 5", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idle6"] = {"anim@mp_corona_idles@male_c@idle_a", "idle_a", "Idle 6", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idle7"] = {"anim@mp_corona_idles@male_d@idle_a", "idle_a", "Idle 7", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["wait3"] = {"amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", "Wait 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idledrunk"] = {"random@drunk_driver_1", "drunk_driver_stand_loop_dd1", "Idle Drunk", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idledrunk2"] = {"random@drunk_driver_1", "drunk_driver_stand_loop_dd2", "Idle Drunk 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["idledrunk3"] = {"missarmenian2", "standing_idle_loop_drunk", "Idle Drunk 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["airguitar"] = {"anim@mp_player_intcelebrationfemale@air_guitar", "air_guitar", "Air Guitar"},
-   ["airsynth"] = {"anim@mp_player_intcelebrationfemale@air_synth", "air_synth", "Air Synth"},
-   ["argue"] = {"misscarsteal4@actor", "actor_berating_loop", "Argue", AnimationOptions =
+   ["ocioso10"] = {"mp_move@prostitute@m@french", "idle", "Ocioso 10", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["argue2"] = {"oddjobs@assassinate@vice@hooker", "argue_a", "Argue 2", AnimationOptions =
+   ["ocioso11"] = {"random@countrysiderobbery", "idle_a", "Ocioso 11", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ocioso2"] = {"anim@heists@heist_corona@team_idles@female_a", "idle", "Ocioso 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ocioso3"] = {"anim@heists@humane_labs@finale@strip_club", "ped_b_celebrate_loop", "Ocioso 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ocioso4"] = {"anim@mp_celebration@idles@female", "celebration_idle_f_a", "Ocioso 4", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ocioso5"] = {"anim@mp_corona_idles@female_b@idle_a", "idle_a", "Ocioso 5", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ocioso6"] = {"anim@mp_corona_idles@male_c@idle_a", "idle_a", "Ocioso 6", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ocioso7"] = {"anim@mp_corona_idles@male_d@idle_a", "idle_a", "IdleOcioso 7", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["esperar3"] = {"amb@world_human_hang_out_street@female_hold_arm@idle_a", "idle_a", "Esperando 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ociosoborracho1"] = {"random@drunk_driver_1", "drunk_driver_stand_loop_dd1", "Ocioso borracho 1", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ociosoborracho2"] = {"random@drunk_driver_1", "drunk_driver_stand_loop_dd2", "Ocioso borracho 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["ociosoborracho3"] = {"missarmenian2", "standing_idle_loop_drunk", "Ocioso borracho 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["airguitar"] = {"anim@mp_player_intcelebrationfemale@air_guitar", "air_guitar", "Guitarra imaginaria"},
+   ["pianoimaginario"] = {"anim@mp_player_intcelebrationfemale@air_synth", "air_synth", "Piano imaginario"},
+   ["Discutir1"] = {"misscarsteal4@actor", "actor_berating_loop", "Discutir 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["bartender"] = {"anim@amb@clubhouse@bar@drink@idle_a", "idle_a_bartender", "Bartender", AnimationOptions =
+   ["Discutir2"] = {"oddjobs@assassinate@vice@hooker", "argue_a", "Discutir 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["blowkiss"] = {"anim@mp_player_intcelebrationfemale@blow_kiss", "blow_kiss", "Blow Kiss"},
-   ["blowkiss2"] = {"anim@mp_player_intselfieblow_kiss", "exit", "Blow Kiss 2", AnimationOptions =
+   ["camarero"] = {"anim@amb@clubhouse@bar@drink@idle_a", "idle_a_bartender", "Camarero", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["lanzarbeso1"] = {"anim@mp_player_intcelebrationfemale@blow_kiss", "blow_kiss", "Lanzar besos 1"},
+   ["lanzarbeso2"] = {"anim@mp_player_intselfieblow_kiss", "exit", "Lanzar besos 2", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 2000
 
    }},
-   ["curtsy"] = {"anim@mp_player_intcelebrationpaired@f_f_sarcastic", "sarcastic_left", "Curtsy"},
-   ["bringiton"] = {"misscommon@response", "bring_it_on", "Bring It On", AnimationOptions =
+   ["reverencia"] = {"anim@mp_player_intcelebrationpaired@f_f_sarcastic", "sarcastic_left", "Reverencia"},
+   ["bringiton"] = {"misscommon@response", "bring_it_on", "Dale", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 3000
    }},
-   ["comeatmebro"] = {"mini@triathlon", "want_some_of_this", "Come at me bro", AnimationOptions =
+   ["venconmigo"] = {"mini@triathlon", "want_some_of_this", "Ven conmigo bro", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 2000
    }},
-   ["cop2"] = {"anim@amb@nightclub@peds@", "rcmme_amanda1_stand_loop_cop", "Cop 2", AnimationOptions =
+   ["policia2"] = {"anim@amb@nightclub@peds@", "rcmme_amanda1_stand_loop_cop", "Policía 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["cop3"] = {"amb@code_human_police_investigate@idle_a", "idle_b", "Cop 3", AnimationOptions =
+   ["policia3"] = {"amb@code_human_police_investigate@idle_a", "idle_b", "Policía 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["crossarms"] = {"amb@world_human_hang_out_street@female_arms_crossed@idle_a", "idle_a", "Crossarms", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["crossarms2"] = {"amb@world_human_hang_out_street@male_c@idle_a", "idle_b", "Crossarms 2", AnimationOptions =
-   {
-       EmoteMoving = true,
-   }},
-   ["crossarms3"] = {"anim@heists@heist_corona@single_team", "single_team_loop_boss", "Crossarms 3", AnimationOptions =
+   ["cruzarbrazos1"] = {"amb@world_human_hang_out_street@female_arms_crossed@idle_a", "idle_a", "Cruzar los brazos 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["crossarms4"] = {"random@street_race", "_car_b_lookout", "Crossarms 4", AnimationOptions =
+   ["cruzarbrazos2"] = {"amb@world_human_hang_out_street@male_c@idle_a", "idle_b", "Cruzar los brazos 2", AnimationOptions =
+   {
+       EmoteMoving = true,
+   }},
+   ["cruzarbrazos3"] = {"anim@heists@heist_corona@single_team", "single_team_loop_boss", "Cruzar los brazos 3", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["crossarms5"] = {"anim@amb@nightclub@peds@", "rcmme_amanda1_stand_loop_cop", "Crossarms 5", AnimationOptions =
+   ["cruzarbrazos4"] = {"random@street_race", "_car_b_lookout", "Cruzar los brazos 4", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["foldarms2"] = {"anim@amb@nightclub@peds@", "rcmme_amanda1_stand_loop_cop", "Fold Arms 2", AnimationOptions =
+   ["cruzarbrazos5"] = {"anim@amb@nightclub@peds@", "rcmme_amanda1_stand_loop_cop", "Cruzar los brazos 5", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["crossarms6"] = {"random@shop_gunstore", "_idle", "Crossarms 6", AnimationOptions =
+   ["cruzarsebrazos2"] = {"anim@amb@nightclub@peds@", "rcmme_amanda1_stand_loop_cop", "Cruzarse de brazos 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["foldarms"] = {"anim@amb@business@bgen@bgen_no_work@", "stand_phone_phoneputdown_idle_nowork", "Fold Arms", AnimationOptions =
+   ["cruzarbrazos6"] = {"random@shop_gunstore", "_idle", "Cruzar los brazos 6", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["crossarmsside"] = {"rcmnigel1a_band_groupies", "base_m2", "Crossarms Side", AnimationOptions =
+   ["cruzarsebrazos1"] = {"anim@amb@business@bgen@bgen_no_work@", "stand_phone_phoneputdown_idle_nowork", "Cruzarse de brazos 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["damn"] = {"gestures@m@standing@casual", "gesture_damn", "Damn", AnimationOptions =
+   ["cruzarbrazoslado"] = {"rcmnigel1a_band_groupies", "base_m2", "Cruzar los brazos de lado", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["maldicion1"] = {"gestures@m@standing@casual", "gesture_damn", "Maldición 1", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 1000
    }},
-   ["damn2"] = {"anim@am_hold_up@male", "shoplift_mid", "Damn 2", AnimationOptions =
+   ["maldicion2"] = {"anim@am_hold_up@male", "shoplift_mid", "Maldición 2", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 1000
    }},
-   ["pointdown"] = {"gestures@f@standing@casual", "gesture_hand_down", "Point Down", AnimationOptions =
+   ["señalarabajo"] = {"gestures@f@standing@casual", "gesture_hand_down", "Señalar abajo", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 1000
    }},
-   ["surrender"] = {"random@arrests@busted", "idle_a", "Surrender", AnimationOptions =
+   ["arrodillarse"] = {"random@arrests@busted", "idle_a", "Ponerse de rodillas", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -573,7 +643,7 @@ DP.Emotes = {
        EmoteMoving = true,
        EmoteDuration = 8000
    }},
-   ["facepalm"] = {"random@car_thief@agitated@idle_a", "agitated_idle_a", "Facepalm", AnimationOptions =
+   ["facepalm1"] = {"random@car_thief@agitated@idle_a", "agitated_idle_a", "Facepalm 1", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 8000
@@ -588,241 +658,241 @@ DP.Emotes = {
        EmoteMoving = true,
        EmoteLoop = true,
    }},
-   ["fallover"] = {"random@drunk_driver_1", "drunk_fall_over", "Fall Over"},
-   ["fallover2"] = {"mp_suicide", "pistol", "Fall Over 2"},
-   ["fallover3"] = {"mp_suicide", "pill", "Fall Over 3"},
-   ["fallover4"] = {"friends@frf@ig_2", "knockout_plyr", "Fall Over 4"},
-   ["fallover5"] = {"anim@gangops@hostage@", "victim_fail", "Fall Over 5"},
-   ["fallasleep"] = {"mp_sleep", "sleep_loop", "Fall Asleep", AnimationOptions =
+   ["suicidarse1"] = {"random@drunk_driver_1", "drunk_fall_over", "Suicidarse 1"},
+   ["suicidarse2"] = {"mp_suicide", "pistol", "Suicidarse 2"},
+   ["suicidarse3"] = {"mp_suicide", "pill", "Suicidarse 3"},
+   ["suicidarse4"] = {"friends@frf@ig_2", "knockout_plyr", "Suicidarse 4"},
+   ["suicidarse5"] = {"anim@gangops@hostage@", "victim_fail", "Suicidarse 5"},
+   ["dormidodepie"] = {"mp_sleep", "sleep_loop", "Dormido de pie", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteLoop = true,
    }},
-   ["fightme"] = {"anim@deathmatch_intros@unarmed", "intro_male_unarmed_c", "Fight Me"},
-   ["fightme2"] = {"anim@deathmatch_intros@unarmed", "intro_male_unarmed_e", "Fight Me 2"},
-   ["finger"] = {"anim@mp_player_intselfiethe_bird", "idle_a", "Finger", AnimationOptions =
+   ["luchaconmigo1"] = {"anim@deathmatch_intros@unarmed", "intro_male_unarmed_c", "Lucha conmigo 1"},
+   ["luchaconmigo2"] = {"anim@deathmatch_intros@unarmed", "intro_male_unarmed_e", "Lucha conmigo 2"},
+   ["sacardedo1"] = {"anim@mp_player_intselfiethe_bird", "idle_a", "Sacar el dedo 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["finger2"] = {"anim@mp_player_intupperfinger", "idle_a_fp", "Finger 2", AnimationOptions =
+   ["sacardedo2"] = {"anim@mp_player_intupperfinger", "idle_a_fp", "Sacar el dedo 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["handshake"] = {"mp_ped_interaction", "handshake_guy_a", "Handshake", AnimationOptions =
+   ["chocarla1"] = {"mp_ped_interaction", "handshake_guy_a", "Chocarla 1", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 3000
    }},
-   ["handshake2"] = {"mp_ped_interaction", "handshake_guy_b", "Handshake 2", AnimationOptions =
+   ["handshake2"] = {"mp_ped_interaction", "handshake_guy_b", "Chocarla 2", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 3000
    }},
-   ["wait4"] = {"amb@world_human_hang_out_street@Female_arm_side@idle_a", "idle_a", "Wait 4", AnimationOptions =
+   ["esperar4"] = {"amb@world_human_hang_out_street@Female_arm_side@idle_a", "idle_a", "Esperar 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["wait5"] = {"missclothing", "idle_storeclerk", "Wait 5", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["wait6"] = {"timetable@amanda@ig_2", "ig_2_base_amanda", "Wait 6", AnimationOptions =
+   ["esperar5"] = {"missclothing", "idle_storeclerk", "Esperar 5", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait7"] = {"rcmnigel1cnmt_1c", "base", "Wait 7", AnimationOptions =
+   ["esperar6"] = {"timetable@amanda@ig_2", "ig_2_base_amanda", "Esperar 6", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait8"] = {"rcmjosh1", "idle", "Wait 8", AnimationOptions =
+   ["esperar7"] = {"rcmnigel1cnmt_1c", "base", "Esperar 7", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait9"] = {"rcmjosh2", "josh_2_intp1_base", "Wait 9", AnimationOptions =
+   ["esperar8"] = {"rcmjosh1", "idle", "Esperar 8", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait10"] = {"timetable@amanda@ig_3", "ig_3_base_tracy", "Wait 10", AnimationOptions =
+   ["esperar9"] = {"rcmjosh2", "josh_2_intp1_base", "Esperar 9", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait11"] = {"misshair_shop@hair_dressers", "keeper_base", "Wait 11", AnimationOptions =
+   ["esperar10"] = {"timetable@amanda@ig_3", "ig_3_base_tracy", "Esperar 10", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["hiking"] = {"move_m@hiking", "idle", "Hiking", AnimationOptions =
+   ["esperar11"] = {"misshair_shop@hair_dressers", "keeper_base", "Esperar 11", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["hug"] = {"mp_ped_interaction", "kisses_guy_a", "Hug"},
-   ["hug2"] = {"mp_ped_interaction", "kisses_guy_b", "Hug 2"},
-   ["hug3"] = {"mp_ped_interaction", "hugs_guy_a", "Hug 3"},
-   ["inspect"] = {"random@train_tracks", "idle_e", "Inspect"},
-   ["jazzhands"] = {"anim@mp_player_intcelebrationfemale@jazz_hands", "jazz_hands", "Jazzhands", AnimationOptions =
+   ["excursionismo"] = {"move_m@hiking", "idle", "Excursionismo", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["abrazo1"] = {"mp_ped_interaction", "kisses_guy_a", "Abrazo 1"},
+   ["abrazo2"] = {"mp_ped_interaction", "kisses_guy_b", "Abrazo 2"},
+   ["abrazo3"] = {"mp_ped_interaction", "hugs_guy_a", "Abrazo 3"},
+   ["inspeccionar"] = {"random@train_tracks", "idle_e", "Inspeccionar"},
+   ["manosdejazz"] = {"anim@mp_player_intcelebrationfemale@jazz_hands", "jazz_hands", "Manos de Jazz", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 6000,
    }},
-   ["jog2"] = {"amb@world_human_jog_standing@male@idle_a", "idle_a", "Jog 2", AnimationOptions =
+   ["marchar2"] = {"amb@world_human_jog_standing@male@idle_a", "idle_a", "Marchar 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["jog3"] = {"amb@world_human_jog_standing@female@idle_a", "idle_a", "Jog 3", AnimationOptions =
+   ["marchar3"] = {"amb@world_human_jog_standing@female@idle_a", "idle_a", "Marchar 3", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["jog4"] = {"amb@world_human_power_walker@female@idle_a", "idle_a", "Jog 4", AnimationOptions =
+   ["marchar4"] = {"amb@world_human_power_walker@female@idle_a", "idle_a", "Marchar 4", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["jog5"] = {"move_m@joy@a", "walk", "Jog 5", AnimationOptions =
+   ["marchar5"] = {"move_m@joy@a", "walk", "Marchar 5", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["jumpingjacks"] = {"timetable@reunited@ig_2", "jimmy_getknocked", "Jumping Jacks", AnimationOptions =
+   ["sentadillas"] = {"timetable@reunited@ig_2", "jimmy_getknocked", "Sentadillas", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["kneel2"] = {"rcmextreme3", "idle", "Kneel 2", AnimationOptions =
+   ["arrodillarse2"] = {"rcmextreme3", "idle", "Arrodillarse a mirar 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["kneel3"] = {"amb@world_human_bum_wash@male@low@idle_a", "idle_a", "Kneel 3", AnimationOptions =
+   ["arrodillarse3"] = {"amb@world_human_bum_wash@male@low@idle_a", "idle_a", "Arrodillarse a mirar 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["knock"] = {"timetable@jimmy@doorknock@", "knockdoor_idle", "Knock", AnimationOptions =
+   ["toctoc1"] = {"timetable@jimmy@doorknock@", "knockdoor_idle", "Llamar a la puerta 1", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteLoop = true,
    }},
-   ["knock2"] = {"missheistfbi3b_ig7", "lift_fibagent_loop", "Knock 2", AnimationOptions =
+   ["toctoc2"] = {"missheistfbi3b_ig7", "lift_fibagent_loop", "Llamar a la puerta 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["knucklecrunch"] = {"anim@mp_player_intcelebrationfemale@knuckle_crunch", "knuckle_crunch", "Knuckle Crunch", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["lapdance"] = {"mp_safehouse", "lap_dance_girl", "Lapdance"},
-   ["lean2"] = {"amb@world_human_leaning@female@wall@back@hand_up@idle_a", "idle_a", "Lean 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["lean3"] = {"amb@world_human_leaning@female@wall@back@holding_elbow@idle_a", "idle_a", "Lean 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["lean4"] = {"amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", "Lean 4", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["lean5"] = {"amb@world_human_leaning@male@wall@back@hands_together@idle_b", "idle_b", "Lean 5", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["leanflirt"] = {"random@street_race", "_car_a_flirt_girl", "Lean Flirt", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["leanbar2"] = {"amb@prop_human_bum_shopping_cart@male@idle_a", "idle_c", "Lean Bar 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["leanbar3"] = {"anim@amb@nightclub@lazlow@ig1_vip@", "clubvip_base_laz", "Lean Bar 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["leanbar4"] = {"anim@heists@prison_heist", "ped_b_loop_a", "Lean Bar 4", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["leanhigh"] = {"anim@mp_ferris_wheel", "idle_a_player_one", "Lean High", AnimationOptions =
+   ["chascarnudillos"] = {"anim@mp_player_intcelebrationfemale@knuckle_crunch", "knuckle_crunch", "Chascar nudillos", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["leanhigh2"] = {"anim@mp_ferris_wheel", "idle_a_player_two", "Lean High 2", AnimationOptions =
+   ["bailesensual"] = {"mp_safehouse", "lap_dance_girl", "Baile sensual"},
+   ["apoyarse2"] = {"amb@world_human_leaning@female@wall@back@hand_up@idle_a", "idle_a", "Apoyarse 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["apoyarse3"] = {"amb@world_human_leaning@female@wall@back@holding_elbow@idle_a", "idle_a", "Apoyarse 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["apoyarse4"] = {"amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", "Apoyarse 4", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["apoyarse5"] = {"amb@world_human_leaning@male@wall@back@hands_together@idle_b", "idle_b", "Apoyarse 5", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["apoyarseflirteo"] = {"random@street_race", "_car_a_flirt_girl", "Apoyarse flirteando", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["apoyarsebarra2"] = {"amb@prop_human_bum_shopping_cart@male@idle_a", "idle_c", "Apoyarse en bar 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["apoyarsebarra3"] = {"anim@amb@nightclub@lazlow@ig1_vip@", "clubvip_base_laz", "Apoyarse en bar 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["apoyarsebarra4"] = {"anim@heists@prison_heist", "ped_b_loop_a", "Apoyarse en bar 4", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["apoyarsebarraalta1"] = {"anim@mp_ferris_wheel", "idle_a_player_one", "Apoyarse en barra alta 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["leanside"] = {"timetable@mime@01_gc", "idle_a", "Leanside", AnimationOptions =
+   ["apoyarsebarraalta2"] = {"anim@mp_ferris_wheel", "idle_a_player_two", "Apoyarse en barra alta", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["leanside2"] = {"misscarstealfinale", "packer_idle_1_trevor", "Leanside 2", AnimationOptions =
+   ["apoyarsepared1"] = {"timetable@mime@01_gc", "idle_a", "Apoyarse en la pared 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["leanside3"] = {"misscarstealfinalecar_5_ig_1", "waitloop_lamar", "Leanside 3", AnimationOptions =
+   ["apoyarsepared2"] = {"misscarstealfinale", "packer_idle_1_trevor", "Apoyarse en la pared 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["leanside4"] = {"misscarstealfinalecar_5_ig_1", "waitloop_lamar", "Leanside 4", AnimationOptions =
+   ["apoyarsepared3"] = {"misscarstealfinalecar_5_ig_1", "waitloop_lamar", "Apoyarse en la pared 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["apoyarsepared4"] = {"misscarstealfinalecar_5_ig_1", "waitloop_lamar", "Apoyarse en la pared 4", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = false,
    }},
-   ["leanside5"] = {"rcmjosh2", "josh_2_intp1_base", "Leanside 5", AnimationOptions =
+   ["apoyarsepared5"] = {"rcmjosh2", "josh_2_intp1_base", "Apoyarse en la pared 5", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = false,
    }},
-   ["me"] = {"gestures@f@standing@casual", "gesture_me_hard", "Me", AnimationOptions =
+   ["yo"] = {"gestures@f@standing@casual", "gesture_me_hard", "Yo", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 1000
    }},
-   ["mechanic"] = {"mini@repair", "fixing_a_ped", "Mechanic", AnimationOptions =
+   ["mecanico1"] = {"mini@repair", "fixing_a_ped", "Mecánico 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["mechanic2"] = {"amb@world_human_vehicle_mechanic@male@base", "idle_a", "Mechanic 2", AnimationOptions =
+   ["mecanico2"] = {"amb@world_human_vehicle_mechanic@male@base", "idle_a", "Mecánico 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["mechanic3"] = {"anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", "Mechanic 3", AnimationOptions =
+   ["mecanico3"] = {"anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", "Mecanico 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["mechanic4"] = {"anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", "Mechanic 4", AnimationOptions =
+   ["mecanico4"] = {"anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", "Mecanico 4", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["medic2"] = {"amb@medic@standing@tendtodead@base", "base", "Medic 2", AnimationOptions =
+   ["medico2"] = {"amb@medic@standing@tendtodead@base", "base", "Médico 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["meditate"] = {"rcmcollect_paperleadinout@", "meditiate_idle", "Meditiate", AnimationOptions = -- CHANGE ME
+   ["meditar1"] = {"rcmcollect_paperleadinout@", "meditiate_idle", "Meditar 1", AnimationOptions = -- CHANGE ME
    {
        EmoteLoop = true,
    }},
-   ["meditate2"] = {"rcmepsilonism3", "ep_3_rcm_marnie_meditating", "Meditiate 2", AnimationOptions = -- CHANGE ME
+   ["meditar2"] = {"rcmepsilonism3", "ep_3_rcm_marnie_meditating", "Meditar 2", AnimationOptions = -- CHANGE ME
    {
        EmoteLoop = true,
    }},
-   ["meditate3"] = {"rcmepsilonism3", "base_loop", "Meditiate 3", AnimationOptions = -- CHANGE ME
+   ["meditar3"] = {"rcmepsilonism3", "base_loop", "Meditar 3", AnimationOptions = -- CHANGE ME
    {
        EmoteLoop = true,
    }},
@@ -831,7 +901,7 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["no"] = {"anim@heists@ornate_bank@chat_manager", "fail", "No", AnimationOptions =
+   ["no1"] = {"anim@heists@ornate_bank@chat_manager", "fail", "No 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
@@ -841,12 +911,12 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["nosepick"] = {"anim@mp_player_intcelebrationfemale@nose_pick", "nose_pick", "Nose Pick", AnimationOptions =
+   ["moco"] = {"anim@mp_player_intcelebrationfemale@nose_pick", "nose_pick", "Moco", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["noway"] = {"gestures@m@standing@casual", "gesture_no_way", "No Way", AnimationOptions =
+   ["noway"] = {"gestures@m@standing@casual", "gesture_no_way", "De ninguna manera", AnimationOptions =
    {
        EmoteDuration = 1500,
        EmoteMoving = true,
@@ -856,227 +926,227 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["outofbreath"] = {"re@construction", "out_of_breath", "Out of Breath", AnimationOptions =
+   ["sinaliento"] = {"re@construction", "out_of_breath", "Sin aliento", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["pickup"] = {"random@domestic", "pickup_low", "Pickup"},
-   ["push"] = {"missfinale_c2ig_11", "pushcar_offcliff_f", "Push", AnimationOptions =
+   ["recoger"] = {"random@domestic", "pickup_low", "Recoger del suelo"},
+   ["empujar1"] = {"missfinale_c2ig_11", "pushcar_offcliff_f", "Empujar 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["push2"] = {"missfinale_c2ig_11", "pushcar_offcliff_m", "Push 2", AnimationOptions =
+   ["empujar2"] = {"missfinale_c2ig_11", "pushcar_offcliff_m", "Empujar 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["point"] = {"gestures@f@standing@casual", "gesture_point", "Point", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["pushup"] = {"amb@world_human_push_ups@male@idle_a", "idle_d", "Pushup", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["countdown"] = {"random@street_race", "grid_girl_race_start", "Countdown", AnimationOptions =
+   ["señalar"] = {"gestures@f@standing@casual", "gesture_point", "Señalar", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["pointright"] = {"mp_gun_shop_tut", "indicate_right", "Point Right", AnimationOptions =
+   ["flexiones"] = {"amb@world_human_push_ups@male@idle_a", "idle_d", "Flexiones", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["cuentaatras"] = {"random@street_race", "grid_girl_race_start", "Cuenta atrás", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["salute"] = {"anim@mp_player_intincarsalutestd@ds@", "idle_a", "Salute", AnimationOptions =
+   ["señalarderecha"] = {"mp_gun_shop_tut", "indicate_right", "Señalar a la derecha", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["salute2"] = {"anim@mp_player_intincarsalutestd@ps@", "idle_a", "Salute 2", AnimationOptions =
+   ["saludo1"] = {"anim@mp_player_intincarsalutestd@ds@", "idle_a", "Saludo 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["salute3"] = {"anim@mp_player_intuppersalute", "idle_a", "Salute 3", AnimationOptions =
+   ["saludo2"] = {"anim@mp_player_intincarsalutestd@ps@", "idle_a", "Saludo 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["scared"] = {"random@domestic", "f_distressed_loop", "Scared", AnimationOptions =
+   ["saludo3"] = {"anim@mp_player_intuppersalute", "idle_a", "Saludo 3", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["scared2"] = {"random@homelandsecurity", "knees_loop_girl", "Scared 2", AnimationOptions =
+   ["asustado1"] = {"random@domestic", "f_distressed_loop", "Asustado 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["screwyou"] = {"misscommon@response", "screw_you", "Screw You", AnimationOptions =
+   ["asustado2"] = {"random@homelandsecurity", "knees_loop_girl", "Asustado 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["shakeoff"] = {"move_m@_idles@shake_off", "shakeoff_1", "Shake Off", AnimationOptions =
+   ["queteden"] = {"misscommon@response", "screw_you", "Que te den", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["sacudirse"] = {"move_m@_idles@shake_off", "shakeoff_1", "Sacudirse", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 3500,
    }},
-   ["shot"] = {"random@dealgonewrong", "idle_a", "Shot", AnimationOptions =
+   ["disparado"] = {"random@dealgonewrong", "idle_a", "Disparado", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sleep"] = {"timetable@tracy@sleep@", "idle_c", "Sleep", AnimationOptions =
+   ["dormir"] = {"timetable@tracy@sleep@", "idle_c", "Dormir", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["shrug"] = {"gestures@f@standing@casual", "gesture_shrug_hard", "Shrug", AnimationOptions =
+   ["pedirexplicaciones1"] = {"gestures@f@standing@casual", "gesture_shrug_hard", "Pedir explicaciones 1", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 1000,
    }},
-   ["shrug2"] = {"gestures@m@standing@casual", "gesture_shrug_hard", "Shrug 2", AnimationOptions =
+   ["pedirexplicaciones2"] = {"gestures@m@standing@casual", "gesture_shrug_hard", "Pedir explicaciones 2", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 1000,
    }},
-   ["sit"] = {"anim@amb@business@bgen@bgen_no_work@", "sit_phone_phoneputdown_idle_nowork", "Sit", AnimationOptions =
+   ["sentarse1"] = {"anim@amb@business@bgen@bgen_no_work@", "sit_phone_phoneputdown_idle_nowork", "Sentarse en el suelo 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sit2"] = {"rcm_barry3", "barry_3_sit_loop", "Sit 2", AnimationOptions =
+   ["sentarse2"] = {"rcm_barry3", "barry_3_sit_loop", "Sentarse en el suelo 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sit3"] = {"amb@world_human_picnic@male@idle_a", "idle_a", "Sit 3", AnimationOptions =
+   ["sentarse3"] = {"amb@world_human_picnic@male@idle_a", "idle_a", "Sentarse en el suelo 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sit4"] = {"amb@world_human_picnic@female@idle_a", "idle_a", "Sit 4", AnimationOptions =
+   ["sentarse4"] = {"amb@world_human_picnic@female@idle_a", "idle_a", "Sentarse en el suelo 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sit5"] = {"anim@heists@fleeca_bank@ig_7_jetski_owner", "owner_idle", "Sit 5", AnimationOptions =
+   ["sentarse5"] = {"anim@heists@fleeca_bank@ig_7_jetski_owner", "owner_idle", "Sentarse en el suelo 5", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sit6"] = {"timetable@jimmy@mics3_ig_15@", "idle_a_jimmy", "Sit 6", AnimationOptions =
+   ["sentarse6"] = {"timetable@jimmy@mics3_ig_15@", "idle_a_jimmy", "Sentarse en el suelo 6", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sit7"] = {"anim@amb@nightclub@lazlow@lo_alone@", "lowalone_base_laz", "Sit 7", AnimationOptions =
+   ["sentarse7"] = {"anim@amb@nightclub@lazlow@lo_alone@", "lowalone_base_laz", "Sentarse en el suelo 7", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sit8"] = {"timetable@jimmy@mics3_ig_15@", "mics3_15_base_jimmy", "Sit 8", AnimationOptions =
+   ["sentarse8"] = {"timetable@jimmy@mics3_ig_15@", "mics3_15_base_jimmy", "Sentarse en el suelo 8", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sit9"] = {"amb@world_human_stupor@male@idle_a", "idle_a", "Sit 9", AnimationOptions =
+   ["sentarse9"] = {"amb@world_human_stupor@male@idle_a", "idle_a", "Sentarse en el suelo 9", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitlean"] = {"timetable@tracy@ig_14@", "ig_14_base_tracy", "Sit Lean", AnimationOptions =
+   ["rodillasuelo"] = {"timetable@tracy@ig_14@", "ig_14_base_tracy", "Una rodilla en el suelo", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitsad"] = {"anim@amb@business@bgen@bgen_no_work@", "sit_phone_phoneputdown_sleeping-noworkfemale", "Sit Sad", AnimationOptions =
+   ["sitsad"] = {"anim@amb@business@bgen@bgen_no_work@", "sit_phone_phoneputdown_sleeping-noworkfemale", "Sentarse triste", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitscared"] = {"anim@heists@ornate_bank@hostages@hit", "hit_loop_ped_b", "Sit Scared", AnimationOptions =
+   ["sentarseasustado1"] = {"anim@heists@ornate_bank@hostages@hit", "hit_loop_ped_b", "Sentarse asustado 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitscared2"] = {"anim@heists@ornate_bank@hostages@ped_c@", "flinch_loop", "Sit Scared 2", AnimationOptions =
+   ["sentarseasustado2"] = {"anim@heists@ornate_bank@hostages@ped_c@", "flinch_loop", "Sentarse asustado 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitscared3"] = {"anim@heists@ornate_bank@hostages@ped_e@", "flinch_loop", "Sit Scared 3", AnimationOptions =
+   ["sentarseasustado3"] = {"anim@heists@ornate_bank@hostages@ped_e@", "flinch_loop", "Sentarse asustado 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitdrunk"] = {"timetable@amanda@drunk@base", "base", "Sit Drunk", AnimationOptions =
+   ["sentarseborracho"] = {"timetable@amanda@drunk@base", "base", "Sentarse borracho", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitchair2"] = {"timetable@ron@ig_5_p3", "ig_5_p3_base", "Sit Chair 2", AnimationOptions =
+   ["sentarsesilla2"] = {"timetable@ron@ig_5_p3", "ig_5_p3_base", "Sentarse en la silla 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitchair3"] = {"timetable@reunited@ig_10", "base_amanda", "Sit Chair 3", AnimationOptions =
+   ["sentarsesilla3"] = {"timetable@reunited@ig_10", "base_amanda", "Sentarse en la silla 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitchair4"] = {"timetable@ron@ig_3_couch", "base", "Sit Chair 4", AnimationOptions =
+   ["sentarsesilla4"] = {"timetable@ron@ig_3_couch", "base", "Sentarse en la silla 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitchair5"] = {"timetable@jimmy@mics3_ig_15@", "mics3_15_base_tracy", "Sit Chair 5", AnimationOptions =
+   ["sentarsesilla5"] = {"timetable@jimmy@mics3_ig_15@", "mics3_15_base_tracy", "Sentarse en la silla 5", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitchair6"] = {"timetable@maid@couch@", "base", "Sit Chair 6", AnimationOptions =
+   ["sentarsesilla6"] = {"timetable@maid@couch@", "base", "Sentarse en la silla 6", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sitchairside"] = {"timetable@ron@ron_ig_2_alt1", "ig_2_alt1_base", "Sit Chair Side", AnimationOptions =
+   ["sentarsesillalado"] = {"timetable@ron@ron_ig_2_alt1", "ig_2_alt1_base", "Sentarse en la silla de lado", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["situp"] = {"amb@world_human_sit_ups@male@idle_a", "idle_a", "Sit Up", AnimationOptions =
+   ["abdominales"] = {"amb@world_human_sit_ups@male@idle_a", "idle_a", "Abdominales", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["clapangry"] = {"anim@arena@celeb@flat@solo@no_props@", "angry_clap_a_player_a", "Clap Angry", AnimationOptions =
+   ["aplausoenfadado"] = {"anim@arena@celeb@flat@solo@no_props@", "angry_clap_a_player_a", "Aplaudir enfadado", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["slowclap3"] = {"anim@mp_player_intupperslow_clap", "idle_a", "Slow Clap 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["clap"] = {"amb@world_human_cheering@male_a", "base", "Clap", AnimationOptions =
+   ["aplaudirdespacio3"] = {"anim@mp_player_intupperslow_clap", "idle_a", "Aplaudir despacio 3", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["slowclap"] = {"anim@mp_player_intcelebrationfemale@slow_clap", "slow_clap", "Slow Clap", AnimationOptions =
+   ["aplaudir"] = {"amb@world_human_cheering@male_a", "base", "Aplaudir", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["slowclap2"] = {"anim@mp_player_intcelebrationmale@slow_clap", "slow_clap", "Slow Clap 2", AnimationOptions =
+   ["aplaudirdespacio1"] = {"anim@mp_player_intcelebrationfemale@slow_clap", "slow_clap", "Aplaudir despacio 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["smell"] = {"move_p_m_two_idles@generic", "fidget_sniff_fingers", "Smell", AnimationOptions =
+   ["aplaudirdespacio2"] = {"anim@mp_player_intcelebrationmale@slow_clap", "slow_clap", "Aplaudir despacio 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["stickup"] = {"random@countryside_gang_fight", "biker_02_stickup_loop", "Stick Up", AnimationOptions =
+   ["oler"] = {"move_p_m_two_idles@generic", "fidget_sniff_fingers", "Oler", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["stumble"] = {"misscarsteal4@actor", "stumble", "Stumble", AnimationOptions =
+   ["apuntar"] = {"random@countryside_gang_fight", "biker_02_stickup_loop", "Apuntar", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["conmocionado"] = {"misscarsteal4@actor", "stumble", "Conmocionado", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["stunned"] = {"stungun@standing", "damage", "Stunned", AnimationOptions =
+   ["electrocutado"] = {"stungun@standing", "damage", "Electrocutado", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sunbathe"] = {"amb@world_human_sunbathe@male@back@base", "base", "Sunbathe", AnimationOptions =
+   ["tomarsol1"] = {"amb@world_human_sunbathe@male@back@base", "base", "Tomar el sol 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["sunbathe2"] = {"amb@world_human_sunbathe@female@back@base", "base", "Sunbathe 2", AnimationOptions =
+   ["tomarsol2"] = {"amb@world_human_sunbathe@female@back@base", "base", "Tomar el sol 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1089,117 +1159,117 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["think5"] = {"mp_cp_welcome_tutthink", "b_think", "Think 5", AnimationOptions =
+   ["pensar5"] = {"mp_cp_welcome_tutthink", "b_think", "Pensar 5", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 2000,
    }},
-   ["think"] = {"misscarsteal4@aliens", "rehearsal_base_idle_director", "Think", AnimationOptions =
+   ["pensar1"] = {"misscarsteal4@aliens", "rehearsal_base_idle_director", "Pensar 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["think3"] = {"timetable@tracy@ig_8@base", "base", "Think 3", AnimationOptions =
+   ["pensar3"] = {"timetable@tracy@ig_8@base", "base", "Pensar 3", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
 
-   ["think2"] = {"missheist_jewelleadinout", "jh_int_outro_loop_a", "Think 2", AnimationOptions =
+   ["pensar2"] = {"missheist_jewelleadinout", "jh_int_outro_loop_a", "Pensar 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["thumbsup3"] = {"anim@mp_player_intincarthumbs_uplow@ds@", "enter", "Thumbs Up 3", AnimationOptions =
+   ["pulgararriba3"] = {"anim@mp_player_intincarthumbs_uplow@ds@", "enter", "Pulgares hacia arriba 3", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 3000,
    }},
-   ["thumbsup2"] = {"anim@mp_player_intselfiethumbs_up", "idle_a", "Thumbs Up 2", AnimationOptions =
+   ["pulgararriba2"] = {"anim@mp_player_intselfiethumbs_up", "idle_a", "Pulgares hacia arriba 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["thumbsup"] = {"anim@mp_player_intupperthumbs_up", "idle_a", "Thumbs Up", AnimationOptions =
+   ["pulgararriba1"] = {"anim@mp_player_intupperthumbs_up", "idle_a", "Pulgares hacia arriba 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["type"] = {"anim@heists@prison_heiststation@cop_reactions", "cop_b_idle", "Type", AnimationOptions =
+   ["palpar1"] = {"anim@heists@prison_heiststation@cop_reactions", "cop_b_idle", "Palpar 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["type2"] = {"anim@heists@prison_heistig1_p1_guard_checks_bus", "loop", "Type 2", AnimationOptions =
+   ["palpar2"] = {"anim@heists@prison_heistig1_p1_guard_checks_bus", "loop", "Palpar 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["type3"] = {"mp_prison_break", "hack_loop", "Type 3", AnimationOptions =
+   ["palpar3"] = {"mp_prison_break", "hack_loop", "Palpar 3", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["type4"] = {"mp_fbi_heist", "loop", "Type 4", AnimationOptions =
+   ["palpar4"] = {"mp_fbi_heist", "loop", "Palpar 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["warmth"] = {"amb@world_human_stand_fire@male@idle_a", "idle_a", "Warmth", AnimationOptions =
+   ["calor"] = {"amb@world_human_stand_fire@male@idle_a", "idle_a", "Calor", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wave4"] = {"random@mugging5", "001445_01_gangintimidation_1_female_idle_b", "Wave 4", AnimationOptions =
+   ["ola4"] = {"random@mugging5", "001445_01_gangintimidation_1_female_idle_b", "Saludo 4", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 3000,
    }},
-   ["wave2"] = {"anim@mp_player_intcelebrationfemale@wave", "wave", "Wave 2", AnimationOptions =
+   ["ola2"] = {"anim@mp_player_intcelebrationfemale@wave", "wave", "Saludo 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wave3"] = {"friends@fra@ig_1", "over_here_idle_a", "Wave 3", AnimationOptions =
+   ["ola3"] = {"friends@fra@ig_1", "over_here_idle_a", "Saludo 3", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wave"] = {"friends@frj@ig_1", "wave_a", "Wave", AnimationOptions =
+   ["ola1"] = {"friends@frj@ig_1", "wave_a", "Saludo 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wave5"] = {"friends@frj@ig_1", "wave_b", "Wave 5", AnimationOptions =
+   ["ola5"] = {"friends@frj@ig_1", "wave_b", "Saludo 5", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wave6"] = {"friends@frj@ig_1", "wave_c", "Wave 6", AnimationOptions =
+   ["ola6"] = {"friends@frj@ig_1", "wave_c", "Saludo 6", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wave7"] = {"friends@frj@ig_1", "wave_d", "Wave 7", AnimationOptions =
+   ["ola7"] = {"friends@frj@ig_1", "wave_d", "Saludo 7", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wave8"] = {"friends@frj@ig_1", "wave_e", "Wave 8", AnimationOptions =
+   ["ola8"] = {"friends@frj@ig_1", "wave_e", "Saludo 8", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wave9"] = {"gestures@m@standing@casual", "gesture_hello", "Wave 9", AnimationOptions =
+   ["ola9"] = {"gestures@m@standing@casual", "gesture_hello", "Saludo 9", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["whistle"] = {"taxi_hail", "hail_taxi", "Whistle", AnimationOptions =
+   ["silbar1"] = {"taxi_hail", "hail_taxi", "Silbar 1", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 1300,
    }},
-   ["whistle2"] = {"rcmnigel1c", "hailing_whistle_waive_a", "Whistle 2", AnimationOptions =
+   ["silbar2"] = {"rcmnigel1c", "hailing_whistle_waive_a", "Silbar 2", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 2000,
@@ -1209,12 +1279,12 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["lift"] = {"random@hitch_lift", "idle_f", "Lift", AnimationOptions =
+   ["autostop"] = {"random@hitch_lift", "idle_f", "Hacer autostop", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["lol"] = {"anim@arena@celeb@flat@paired@no_props@", "laugh_a_player_b", "LOL", AnimationOptions =
+   ["lol1"] = {"anim@arena@celeb@flat@paired@no_props@", "laugh_a_player_b", "LOL 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1222,123 +1292,123 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["statue2"] = {"fra_0_int-1", "cs_lamardavis_dual-1", "Statue 2", AnimationOptions =
+   ["estatua2"] = {"fra_0_int-1", "cs_lamardavis_dual-1", "Estatua 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["statue3"] = {"club_intro2-0", "csb_englishdave_dual-0", "Statue 3", AnimationOptions =
+   ["estatua3"] = {"club_intro2-0", "csb_englishdave_dual-0", "Estatua 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["gangsign"] = {"mp_player_int_uppergang_sign_a", "mp_player_int_gang_sign_a", "Gang Sign", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["gangsign2"] = {"mp_player_int_uppergang_sign_b", "mp_player_int_gang_sign_b", "Gang Sign 2", AnimationOptions =
+   ["gangster1"] = {"mp_player_int_uppergang_sign_a", "mp_player_int_gang_sign_a", "Signo gangster 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["passout"] = {"missarmenian2", "drunk_loop", "Passout", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["passout2"] = {"missarmenian2", "corpse_search_exit_ped", "Passout 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["passout3"] = {"anim@gangops@morgue@table@", "body_search", "Passout 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["passout4"] = {"mini@cpr@char_b@cpr_def", "cpr_pumpchest_idle", "Passout 4", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["passout5"] = {"random@mugging4", "flee_backward_loop_shopkeeper", "Passout 5", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["petting"] = {"creatures@rottweiler@tricks@", "petting_franklin", "Petting", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["crawl"] = {"move_injured_ground", "front_loop", "Crawl", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["flip2"] = {"anim@arena@celeb@flat@solo@no_props@", "cap_a_player_a", "Flip 2"},
-   ["flip"] = {"anim@arena@celeb@flat@solo@no_props@", "flip_a_player_a", "Flip"},
-   ["slide"] = {"anim@arena@celeb@flat@solo@no_props@", "slide_a_player_a", "Slide"},
-   ["slide2"] = {"anim@arena@celeb@flat@solo@no_props@", "slide_b_player_a", "Slide 2"},
-   ["slide3"] = {"anim@arena@celeb@flat@solo@no_props@", "slide_c_player_a", "Slide 3"},
-   ["slugger"] = {"anim@arena@celeb@flat@solo@no_props@", "slugger_a_player_a", "Slugger"},
-   ["flipoff"] = {"anim@arena@celeb@podium@no_prop@", "flip_off_a_1st", "Flip Off", AnimationOptions =
-   {
-       EmoteMoving = true,
-   }},
-   ["flipoff2"] = {"anim@arena@celeb@podium@no_prop@", "flip_off_c_1st", "Flip Off 2", AnimationOptions =
-   {
-       EmoteMoving = true,
-   }},
-   ["bow"] = {"anim@arena@celeb@podium@no_prop@", "regal_c_1st", "Bow", AnimationOptions =
+   ["gangster2"] = {"mp_player_int_uppergang_sign_b", "mp_player_int_gang_sign_b", "Signo gangster 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["bow2"] = {"anim@arena@celeb@podium@no_prop@", "regal_a_1st", "Bow 2", AnimationOptions =
+   ["desmayarse1"] = {"missarmenian2", "drunk_loop", "Desmayarse 1", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["desmayarse2"] = {"missarmenian2", "corpse_search_exit_ped", "Desmayarse 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["desmayarse3"] = {"anim@gangops@morgue@table@", "body_search", "Desmayarse 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["desmayarse4"] = {"mini@cpr@char_b@cpr_def", "cpr_pumpchest_idle", "Desmayarse 4", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["desmayarse5"] = {"random@mugging4", "flee_backward_loop_shopkeeper", "Desmayarse 5", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["acariciar"] = {"creatures@rottweiler@tricks@", "petting_franklin", "Acariciar", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["arrastrarse"] = {"move_injured_ground", "front_loop", "Arrastrarse", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["voltereta2"] = {"anim@arena@celeb@flat@solo@no_props@", "cap_a_player_a", "Voltereta 2"},
+   ["voltereta1"] = {"anim@arena@celeb@flat@solo@no_props@", "flip_a_player_a", "Voltereta 1"},
+   ["deslizarse1"] = {"anim@arena@celeb@flat@solo@no_props@", "slide_a_player_a", "Deslizarse 1"},
+   ["deslizarse2"] = {"anim@arena@celeb@flat@solo@no_props@", "slide_b_player_a", "Deslizarse 2"},
+   ["deslizarse3"] = {"anim@arena@celeb@flat@solo@no_props@", "slide_c_player_a", "Deslizarse 3"},
+   ["batear"] = {"anim@arena@celeb@flat@solo@no_props@", "slugger_a_player_a", "Batear"},
+   ["sacardedo1"] = {"anim@arena@celeb@podium@no_prop@", "flip_off_a_1st", "Sacar el dedo 1", AnimationOptions =
+   {
+       EmoteMoving = true,
+   }},
+   ["sacardedo2"] = {"anim@arena@celeb@podium@no_prop@", "flip_off_c_1st", "Sacar el dedo 2", AnimationOptions =
+   {
+       EmoteMoving = true,
+   }},
+   ["reverencia1"] = {"anim@arena@celeb@podium@no_prop@", "regal_c_1st", "Reverencia 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["keyfob"] = {"anim@mp_player_intmenu@key_fob@", "fob_click", "Key Fob", AnimationOptions =
+   ["reverencia2"] = {"anim@arena@celeb@podium@no_prop@", "regal_a_1st", "Reverencia 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["mandodistancia"] = {"anim@mp_player_intmenu@key_fob@", "fob_click", "Mando a distancia", AnimationOptions =
    {
        EmoteLoop = false,
        EmoteMoving = true,
        EmoteDuration = 1000,
    }},
-   ["golfswing"] = {"rcmnigel1d", "swing_a_mark", "Golf Swing"},
-   ["eat"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Eat", AnimationOptions =
+   ["golpegolf"] = {"rcmnigel1d", "swing_a_mark", "Golpe de golf"},
+   ["comer"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Comer", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 3000,
    }},
-   ["reaching"] = {"move_m@intimidation@cop@unarmed", "idle", "Reaching", AnimationOptions =
+   ["pistolera"] = {"move_m@intimidation@cop@unarmed", "idle", "Pistolera", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait"] = {"random@shop_tattoo", "_idle_a", "Wait", AnimationOptions =
+   ["esperar1"] = {"random@shop_tattoo", "_idle_a", "Esperar 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait2"] = {"missbigscore2aig_3", "wait_for_van_c", "Wait 2", AnimationOptions =
+   ["esperar2"] = {"missbigscore2aig_3", "wait_for_van_c", "Esperar 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait12"] = {"rcmjosh1", "idle", "Wait 12", AnimationOptions =
+   ["esperar12"] = {"rcmjosh1", "idle", "Esperar 12", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["wait13"] = {"rcmnigel1a", "base", "Wait 13", AnimationOptions =
+   ["esperar13"] = {"rcmnigel1a", "base", "Esperar 13", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["lapdance2"] = {"mini@strip_club@private_dance@idle", "priv_dance_idle", "Lapdance 2", AnimationOptions =
+   ["bailesexy2"] = {"mini@strip_club@private_dance@idle", "priv_dance_idle", "Baile sexy 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["lapdance3"] = {"mini@strip_club@private_dance@part2", "priv_dance_p2", "Lapdance 3", AnimationOptions =
+   ["bailesexy3"] = {"mini@strip_club@private_dance@part2", "priv_dance_p2", "Baile sexy 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["lapdance3"] = {"mini@strip_club@private_dance@part3", "priv_dance_p3", "Lapdance 3", AnimationOptions =
+   ["bailesexy3"] = {"mini@strip_club@private_dance@part3", "priv_dance_p3", "Baile sexy 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1346,151 +1416,147 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["slap"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_slap", "Slap", AnimationOptions =
+   ["bofetada"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_slap", "Bofetada", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
        EmoteDuration = 2000,
    }},
-   ["headbutt"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_headbutt", "Headbutt"},
-   ["fishdance"] = {"anim@mp_player_intupperfind_the_fish", "idle_a", "Fish Dance", AnimationOptions =
+   ["cabezazo"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_headbutt", "Cabezazo"},
+   ["baileola"] = {"anim@mp_player_intupperfind_the_fish", "idle_a", "Baile ola", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["peace"] = {"mp_player_int_upperpeace_sign", "mp_player_int_peace_sign", "Peace", AnimationOptions =
+   ["paz1"] = {"mp_player_int_upperpeace_sign", "mp_player_int_peace_sign", "Paz 1", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["peace2"] = {"anim@mp_player_intupperpeace", "idle_a", "Peace 2", AnimationOptions =
+   ["paz2"] = {"anim@mp_player_intupperpeace", "idle_a", "Paz 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["cpr"] = {"mini@cpr@char_a@cpr_str", "cpr_pumpchest", "CPR", AnimationOptions =
+   ["rcp1"] = {"mini@cpr@char_a@cpr_str", "cpr_pumpchest", "RCP 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["cpr2"] = {"mini@cpr@char_a@cpr_str", "cpr_pumpchest", "CPR 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["ledge"] = {"missfbi1", "ledge_loop", "Ledge", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["airplane"] = {"missfbi1", "ledge_loop", "Air Plane", AnimationOptions =
+   ["v2"] = {"mini@cpr@char_a@cpr_str", "cpr_pumpchest", "RCP 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["peek"] = {"random@paparazzi@peek", "left_peek_a", "Peek", AnimationOptions =
+   ["aguantarpeso"] = {"missfbi1", "ledge_loop", "Aguantar peso en la espalda", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["cough"] = {"timetable@gardener@smoking_joint", "idle_cough", "Cough", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["stretch"] = {"mini@triathlon", "idle_e", "Stretch", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["stretch2"] = {"mini@triathlon", "idle_f", "Stretch 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["stretch3"] = {"mini@triathlon", "idle_d", "Stretch 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["stretch4"] = {"rcmfanatic1maryann_stretchidle_b", "idle_e", "Stretch 4", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["celebrate"] = {"rcmfanatic1celebrate", "celebrate", "Celebrate", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["punching"] = {"rcmextreme2", "loop_punching", "Punching", AnimationOptions =
+   ["avioneta"] = {"missfbi1", "ledge_loop", "Avioneta", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["superhero"] = {"rcmbarry", "base", "Superhero", AnimationOptions =
+   ["asomar"] = {"random@paparazzi@peek", "left_peek_a", "Asomar", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["superhero2"] = {"rcmbarry", "base", "Superhero 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["mindcontrol"] = {"rcmbarry", "mind_control_b_loop", "Mind Control", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["mindcontrol2"] = {"rcmbarry", "bar_1_attack_idle_aln", "Mind Control 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["clown"] = {"rcm_barry2", "clown_idle_0", "Clown", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["clown2"] = {"rcm_barry2", "clown_idle_1", "Clown 2", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["clown3"] = {"rcm_barry2", "clown_idle_2", "Clown 3", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["clown4"] = {"rcm_barry2", "clown_idle_3", "Clown 4", AnimationOptions =
+   ["tos"] = {"timetable@gardener@smoking_joint", "idle_cough", "Tos", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["clown5"] = {"rcm_barry2", "clown_idle_6", "Clown 5", AnimationOptions =
+   ["estirar1"] = {"mini@triathlon", "idle_e", "Estirar 1", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["tryclothes"] = {"mp_clothing@female@trousers", "try_trousers_neutral_a", "Try Clothes", AnimationOptions =
+   ["estirar2"] = {"mini@triathlon", "idle_f", "Estirar 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["tryclothes2"] = {"mp_clothing@female@shirt", "try_shirt_positive_a", "Try Clothes 2", AnimationOptions =
+   ["estirar3"] = {"mini@triathlon", "idle_d", "Estirar 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["tryclothes3"] = {"mp_clothing@female@shoes", "try_shoes_positive_a", "Try Clothes 3", AnimationOptions =
+   ["estirar4"] = {"rcmfanatic1maryann_stretchidle_b", "idle_e", "Estirar 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["nervous2"] = {"mp_missheist_countrybank@nervous", "nervous_idle", "Nervous 2", AnimationOptions =
+   ["celebrar"] = {"rcmfanatic1celebrate", "celebrate", "Celebrar", AnimationOptions =
    {
        EmoteLoop = true,
-       EmoteMoving = true,
    }},
-   ["nervous"] = {"amb@world_human_bum_standing@twitchy@idle_a", "idle_c", "Nervous", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["nervous3"] = {"rcmme_tracey1", "nervous_loop", "Nervous 3", AnimationOptions =
+   ["boxear"] = {"rcmextreme2", "loop_punching", "Boxear", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["uncuff"] = {"mp_arresting", "a_uncuff", "Uncuff", AnimationOptions =
+   ["superheroe1"] = {"rcmbarry", "base", "Superheroe 1", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["superheroe2"] = {"rcmbarry", "base", "Superheroe 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["namaste"] = {"timetable@amanda@ig_4", "ig_4_base", "Namaste", AnimationOptions =
+   ["controlmental1"] = {"rcmbarry", "mind_control_b_loop", "Control mental 1", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["controlmental2"] = {"rcmbarry", "bar_1_attack_idle_aln", "Control mental 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["payaso1"] = {"rcm_barry2", "clown_idle_0", "Payaso 1", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["payaso2"] = {"rcm_barry2", "clown_idle_1", "Payaso 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["payaso3"] = {"rcm_barry2", "clown_idle_2", "Payaso 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["payaso4"] = {"rcm_barry2", "clown_idle_3", "Payaso 4", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["modelo1"] = {"mp_clothing@female@trousers", "try_trousers_neutral_a", "Modelo de ropa 1", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["modelo2"] = {"mp_clothing@female@shirt", "try_shirt_positive_a", "Modelo de ropa 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["modelo3"] = {"mp_clothing@female@shoes", "try_shoes_positive_a", "Modelo de ropa 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["nervioso2"] = {"mp_missheist_countrybank@nervous", "nervous_idle", "Nervioso 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["nervioso1"] = {"amb@world_human_bum_standing@twitchy@idle_a", "idle_c", "Nervioso 1", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["nervioso3"] = {"rcmme_tracey1", "nervous_loop", "Nervioso 3", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["desesposar"] = {"mp_arresting", "a_uncuff", "Desesposar", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["rezar"] = {"timetable@amanda@ig_4", "ig_4_base", "Rezar", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
@@ -1500,7 +1566,7 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["threaten"] = {"random@atmrobberygen", "b_atm_mugging", "Threaten", AnimationOptions =
+   ["amenazar"] = {"random@atmrobberygen", "b_atm_mugging", "Amenazar", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
@@ -1510,39 +1576,39 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["pull"] = {"random@mugging4", "struggle_loop_b_thief", "Pull", AnimationOptions =
+   ["tirar"] = {"random@mugging4", "struggle_loop_b_thief", "Tirar hacia ti", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["bird"] = {"random@peyote@bird", "wakeup", "Bird"},
-   ["chicken"] = {"random@peyote@chicken", "wakeup", "Chicken", AnimationOptions =
+   ["pajaro"] = {"random@peyote@bird", "wakeup", "Pájaro"},
+   ["gallina"] = {"random@peyote@chicken", "wakeup", "Gallina", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["bark"] = {"random@peyote@dog", "wakeup", "Bark"},
-   ["rabbit"] = {"random@peyote@rabbit", "wakeup", "Rabbit"},
-   ["spiderman"] = {"missexile3", "ex03_train_roof_idle", "Spider-Man", AnimationOptions =
+   ["ladrar"] = {"random@peyote@dog", "wakeup", "Ladrar"},
+   ["conejo"] = {"random@peyote@rabbit", "wakeup", "Conejo"},
+   ["spiderman"] = {"missexile3", "ex03_train_roof_idle", "Spiderman", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["boi"] = {"special_ped@jane@monologue_5@monologue_5c", "brotheradrianhasshown_2", "BOI", AnimationOptions =
+   ["regañar"] = {"special_ped@jane@monologue_5@monologue_5c", "brotheradrianhasshown_2", "Regañar", AnimationOptions =
    {
       EmoteMoving = true,
       EmoteDuration = 3000,
    }},
-   ["adjust"] = {"missmic4", "michael_tux_fidget", "Adjust", AnimationOptions =
+   ["colocarseropa"] = {"missmic4", "michael_tux_fidget", "Colocarse la ropa", AnimationOptions =
    {
       EmoteMoving = true,
       EmoteDuration = 4000,
    }},
-   ["handsup"] = {"missminuteman_1ig_2", "handsup_base", "Hands Up", AnimationOptions =
+   ["levantarmanos"] = {"missminuteman_1ig_2", "handsup_base", "Levantar las manos", AnimationOptions =
    {
       EmoteMoving = true,
       EmoteLoop = true,
    }},
-   ["pee"] = {"misscarsteal2peeing", "peeing_loop", "Pee", AnimationOptions =
+   ["mear"] = {"misscarsteal2peeing", "peeing_loop", "Mear", AnimationOptions =
    {
        EmoteStuck = true,
        PtfxAsset = "scr_amb_chop",
@@ -1557,94 +1623,98 @@ DP.Emotes = {
 ------ These are Scenarios, some of these dont work on women and some other issues, but still good to have.
 -----------------------------------------------------------------------------------------------------------
 
-   ["atm"] = {"Scenario", "PROP_HUMAN_ATM", "ATM"},
-   ["bbq"] = {"MaleScenario", "PROP_HUMAN_BBQ", "BBQ"},
-   ["bumbin"] = {"Scenario", "PROP_HUMAN_BUM_BIN", "Bum Bin"},
-   ["bumsleep"] = {"Scenario", "WORLD_HUMAN_BUM_SLUMPED", "Bum Sleep"},
-   ["cheer"] = {"Scenario", "WORLD_HUMAN_CHEERING", "Cheer"},
-   ["chinup"] = {"Scenario", "PROP_HUMAN_MUSCLE_CHIN_UPS", "Chinup"},
-   ["clipboard2"] = {"MaleScenario", "WORLD_HUMAN_CLIPBOARD", "Clipboard 2"},
-   ["cop"] = {"Scenario", "WORLD_HUMAN_COP_IDLES", "Cop"},
-   ["copbeacon"] = {"MaleScenario", "WORLD_HUMAN_CAR_PARK_ATTENDANT", "Cop Beacon"},
-   ["filmshocking"] = {"Scenario", "WORLD_HUMAN_MOBILE_FILM_SHOCKING", "Film Shocking"},
-   ["flex"] = {"Scenario", "WORLD_HUMAN_MUSCLE_FLEX", "Flex"},
-   ["guard"] = {"Scenario", "WORLD_HUMAN_GUARD_STAND", "Guard"},
-   ["hammer"] = {"Scenario", "WORLD_HUMAN_HAMMERING", "Hammer"},
-   ["hangout"] = {"Scenario", "WORLD_HUMAN_HANG_OUT_STREET", "Hangout"},
-   ["impatient"] = {"Scenario", "WORLD_HUMAN_STAND_IMPATIENT", "Impatient"},
-   ["janitor"] = {"Scenario", "WORLD_HUMAN_JANITOR", "Janitor"},
-   ["jog"] = {"Scenario", "WORLD_HUMAN_JOG_STANDING", "Jog"},
-   ["kneel"] = {"Scenario", "CODE_HUMAN_MEDIC_KNEEL", "Kneel"},
-   ["leafblower"] = {"MaleScenario", "WORLD_HUMAN_GARDENER_LEAF_BLOWER", "Leafblower"},
-   ["lean"] = {"Scenario", "WORLD_HUMAN_LEANING", "Lean"},
-   ["leanbar"] = {"Scenario", "PROP_HUMAN_BUM_SHOPPING_CART", "Lean Bar"},
-   ["lookout"] = {"Scenario", "CODE_HUMAN_CROSS_ROAD_WAIT", "Lookout"},
-   ["maid"] = {"Scenario", "WORLD_HUMAN_MAID_CLEAN", "Maid"},
-   ["medic"] = {"Scenario", "CODE_HUMAN_MEDIC_TEND_TO_DEAD", "Medic"},
-   ["musician"] = {"MaleScenario", "WORLD_HUMAN_MUSICIAN", "Musician"},
-   ["notepad2"] = {"Scenario", "CODE_HUMAN_MEDIC_TIME_OF_DEATH", "Notepad 2"},
-   ["parkingmeter"] = {"Scenario", "PROP_HUMAN_PARKING_METER", "Parking Meter"},
-   ["party"] = {"Scenario", "WORLD_HUMAN_PARTYING", "Party"},
-   ["texting"] = {"Scenario", "WORLD_HUMAN_STAND_MOBILE", "Texting"},
-   ["prosthigh"] = {"Scenario", "WORLD_HUMAN_PROSTITUTE_HIGH_CLASS", "Prostitue High"},
-   ["prostlow"] = {"Scenario", "WORLD_HUMAN_PROSTITUTE_LOW_CLASS", "Prostitue Low"},
-   ["puddle"] = {"Scenario", "WORLD_HUMAN_BUM_WASH", "Puddle"},
-   ["record"] = {"Scenario", "WORLD_HUMAN_MOBILE_FILM_SHOCKING", "Record"},
+   ["cajero"] = {"Scenario", "PROP_HUMAN_ATM", "Cajero"},
+   ["barbacoa"] = {"MaleScenario", "PROP_HUMAN_BBQ", "Barbacoa"},
+   ["arreglar"] = {"Scenario", "PROP_HUMAN_BUM_BIN", "Arreglar"},
+   ["despertarse"] = {"Scenario", "WORLD_HUMAN_BUM_SLUMPED", "Despertarse"},
+   ["animadora"] = {"Scenario", "WORLD_HUMAN_CHEERING", "Animadora"},
+   ["dominadas"] = {"Scenario", "PROP_HUMAN_MUSCLE_CHIN_UPS", "Dominadas"},
+   ["portapapeles2"] = {"MaleScenario", "WORLD_HUMAN_CLIPBOARD", "Portapapeles 2"},
+   ["policia"] = {"Scenario", "WORLD_HUMAN_COP_IDLES", "Policía"},
+   ["lintarnapolicial"] = {"MaleScenario", "WORLD_HUMAN_CAR_PARK_ATTENDANT", "Linterna policial"},
+   ["peliculaimpactante"] = {"Scenario", "WORLD_HUMAN_MOBILE_FILM_SHOCKING", "Pelicula impactante"},
+   ["culturista"] = {"Scenario", "WORLD_HUMAN_MUSCLE_FLEX", "Culturista"},
+   ["guarda"] = {"Scenario", "WORLD_HUMAN_GUARD_STAND", "Guarda"},
+   ["amartillar"] = {"Scenario", "WORLD_HUMAN_HAMMERING", "Amartillar"},
+   ["colgar"] = {"Scenario", "WORLD_HUMAN_HANG_OUT_STREET", "Colgar"},
+   ["impaciente"] = {"Scenario", "WORLD_HUMAN_STAND_IMPATIENT", "Impaciente"},
+   ["escoba"] = {"Scenario", "WORLD_HUMAN_JANITOR", "Escoba"},
+   ["marchar"] = {"Scenario", "WORLD_HUMAN_JOG_STANDING", "Marchar"},
+   ["hincarrodilla"] = {"Scenario", "CODE_HUMAN_MEDIC_KNEEL", "Hincar rodilla"},
+   ["solpadordehojas"] = {"MaleScenario", "WORLD_HUMAN_GARDENER_LEAF_BLOWER", "Soplador de hojas"},
+   ["apoyarse"] = {"Scenario", "WORLD_HUMAN_LEANING", "Apoyarse"},
+   ["apoyarsebar"] = {"Scenario", "PROP_HUMAN_BUM_SHOPPING_CART", "Apoyarse en bar"},
+   ["atento"] = {"Scenario", "CODE_HUMAN_CROSS_ROAD_WAIT", "Estar atento"},
+   ["limpiar"] = {"Scenario", "WORLD_HUMAN_MAID_CLEAN", "Limpiar"},
+   ["medico"] = {"Scenario", "CODE_HUMAN_MEDIC_TEND_TO_DEAD", "Médico"},
+   ["musico"] = {"MaleScenario", "WORLD_HUMAN_MUSICIAN", "Músico"},
+   ["bloc2"] = {"Scenario", "CODE_HUMAN_MEDIC_TIME_OF_DEATH", "Bloc 2"},
+   ["parquimetro"] = {"Scenario", "PROP_HUMAN_PARKING_METER", "Parquimetro"},
+   ["fiesta"] = {"Scenario", "WORLD_HUMAN_PARTYING", "Fiesta"},
+   ["mensajear"] = {"Scenario", "WORLD_HUMAN_STAND_MOBILE", "Mensajeando"},
+   ["prostitutafumando"] = {"Scenario", "WORLD_HUMAN_PROSTITUTE_HIGH_CLASS", "Prostituta fumando"},
+   ["prostitutaesperando"] = {"Scenario", "WORLD_HUMAN_PROSTITUTE_LOW_CLASS", "Prostituta esperando"},
+   ["vaciar"] = {"Scenario", "WORLD_HUMAN_BUM_WASH", "Vaciar"},
+   ["grabar"] = {"Scenario", "WORLD_HUMAN_MOBILE_FILM_SHOCKING", "Hacer foto"},
    -- Sitchair is a litte special, since you want the player to be seated correctly.
    -- So we set it as "ScenarioObject" and do TaskStartScenarioAtPosition() instead of "AtPlace"
-   ["sitchair"] = {"ScenarioObject", "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER", "Sit Chair"},
-   ["smoke"] = {"Scenario", "WORLD_HUMAN_SMOKING", "Smoke"},
-   ["smokeweed"] = {"MaleScenario", "WORLD_HUMAN_DRUG_DEALER", "Smoke Weed"},
-   ["statue"] = {"Scenario", "WORLD_HUMAN_HUMAN_STATUE", "Statue"},
-   ["sunbathe3"] = {"Scenario", "WORLD_HUMAN_SUNBATHE", "Sunbathe 3"},
-   ["sunbatheback"] = {"Scenario", "WORLD_HUMAN_SUNBATHE_BACK", "Sunbathe Back"},
-   ["weld"] = {"Scenario", "WORLD_HUMAN_WELDING", "Weld"},
-   ["windowshop"] = {"Scenario", "WORLD_HUMAN_WINDOW_SHOP_BROWSE", "Window Shop"},
+   ["sentarsesilla"] = {"ScenarioObject", "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER", "Sentarse en la silla"},
+   ["fumar"] = {"Scenario", "WORLD_HUMAN_SMOKING", "Fumar"},
+   ["fumarmaria"] = {"MaleScenario", "WORLD_HUMAN_DRUG_DEALER", "Fumar maria"},
+   ["estatua"] = {"Scenario", "WORLD_HUMAN_HUMAN_STATUE", "Estatua"},
+   ["tomarsol3"] = {"Scenario", "WORLD_HUMAN_SUNBATHE", "Tomar el sol 3"},
+   ["tomarsolbocarriba"] = {"Scenario", "WORLD_HUMAN_SUNBATHE_BACK", "Tomar el sol bocarriba"},
+   ["soldar"] = {"Scenario", "WORLD_HUMAN_WELDING", "Soldar"},
+   ["mirarescaparate"] = {"Scenario", "WORLD_HUMAN_WINDOW_SHOP_BROWSE", "Mirar escaparate"},
    ["yoga"] = {"Scenario", "WORLD_HUMAN_YOGA", "Yoga"},
    -- CASINO DLC EMOTES (STREAMED)
    ["karate"] = {"anim@mp_player_intcelebrationfemale@karate_chops", "karate_chops", "Karate"},
    ["karate2"] = {"anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", "Karate 2"},
-   ["cutthroat"] = {"anim@mp_player_intcelebrationmale@cut_throat", "cut_throat", "Cut Throat"},
-   ["cutthroat2"] = {"anim@mp_player_intcelebrationfemale@cut_throat", "cut_throat", "Cut Throat 2"},
-   ["mindblown"] = {"anim@mp_player_intcelebrationmale@mind_blown", "mind_blown", "Mind Blown", AnimationOptions =
+   ["rajarcuello"] = {"anim@mp_player_intcelebrationmale@cut_throat", "cut_throat", "Rajar el cuello"},
+   ["rajarcuello2"] = {"anim@mp_player_intcelebrationfemale@cut_throat", "cut_throat", "Rajar el cuello 2"},
+   ["ideabrillante"] = {"anim@mp_player_intcelebrationmale@mind_blown", "mind_blown", "Idea brillante", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 4000
    }},
-   ["mindblown2"] = {"anim@mp_player_intcelebrationfemale@mind_blown", "mind_blown", "Mind Blown 2", AnimationOptions =
+   ["ideabrillante2"] = {"anim@mp_player_intcelebrationfemale@mind_blown", "mind_blown", "Idea brillante 2", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 4000
    }},
-   ["boxing"] = {"anim@mp_player_intcelebrationmale@shadow_boxing", "shadow_boxing", "Boxing", AnimationOptions =
+   ["boxeo"] = {"anim@mp_player_intcelebrationmale@shadow_boxing", "shadow_boxing", "Boxear", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 4000
    }},
-   ["boxing2"] = {"anim@mp_player_intcelebrationfemale@shadow_boxing", "shadow_boxing", "Boxing 2", AnimationOptions =
+   ["boxeo2"] = {"anim@mp_player_intcelebrationfemale@shadow_boxing", "shadow_boxing", "Boxear 2", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 4000
    }},
-   ["stink"] = {"anim@mp_player_intcelebrationfemale@stinker", "stinker", "Stink", AnimationOptions =
+   ["peste"] = {"anim@mp_player_intcelebrationfemale@stinker", "stinker", "Peste", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["think4"] = {"anim@amb@casino@hangout@ped_male@stand@02b@idles", "idle_a", "Think 4", AnimationOptions =
+   ["pensar4"] = {"anim@amb@casino@hangout@ped_male@stand@02b@idles", "idle_a", "Pensar 4", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["adjusttie"] = {"clothingtie", "try_tie_positive_a", "Adjust Tie", AnimationOptions =
+   ["colocarcorbata"] = {"clothingtie", "try_tie_positive_a", "Colocarse la corbata", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 5000
    }},
+   ["payaso5"] = {"rcm_barry2", "clown_idle_6", "Payaso 5", AnimationOptions =
+   {
+   	EmoteLoop = true,
+   }},
 }
 
 DP.PropEmotes = {
-   ["umbrella"] = {"amb@world_human_drinking@coffee@male@base", "base", "Umbrella", AnimationOptions =
+   ["paraguas"] = {"amb@world_human_drinking@coffee@male@base", "base", "Paraguas", AnimationOptions =
    {
        Prop = "p_amb_brolly_01",
        PropBone = 57005,
@@ -1658,7 +1728,7 @@ DP.PropEmotes = {
 ------ This is an example of an emote with 2 props, pretty simple! ----------------------------------
 -----------------------------------------------------------------------------------------------------
 
-   ["notepad"] = {"missheistdockssetup1clipboard@base", "base", "Notepad", AnimationOptions =
+   ["bloc"] = {"missheistdockssetup1clipboard@base", "base", "Bloc", AnimationOptions =
    {
        Prop = 'prop_notepad_01',
        PropBone = 18905,
@@ -1672,7 +1742,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["box"] = {"anim@heists@box_carry@", "idle", "Box", AnimationOptions =
+   ["caja"] = {"anim@heists@box_carry@", "idle", "Caja", AnimationOptions =
    {
        Prop = "hei_prop_heist_box",
        PropBone = 60309,
@@ -1680,7 +1750,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["rose"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Rose", AnimationOptions =
+   ["rosa"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Rosa", AnimationOptions =
    {
        Prop = "prop_single_rose",
        PropBone = 18905,
@@ -1688,7 +1758,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["smoke2"] = {"amb@world_human_aa_smoke@male@idle_a", "idle_c", "Smoke 2", AnimationOptions =
+   ["fumar2"] = {"amb@world_human_aa_smoke@male@idle_a", "idle_c", "Fumar 2", AnimationOptions =
    {
        Prop = 'prop_cs_ciggy_01',
        PropBone = 28422,
@@ -1696,7 +1766,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["smoke3"] = {"amb@world_human_aa_smoke@male@idle_a", "idle_b", "Smoke 3", AnimationOptions =
+   ["fumar3"] = {"amb@world_human_aa_smoke@male@idle_a", "idle_b", "Fumar 3", AnimationOptions =
    {
        Prop = 'prop_cs_ciggy_01',
        PropBone = 28422,
@@ -1704,7 +1774,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["smoke4"] = {"amb@world_human_smoking@female@idle_a", "idle_b", "Smoke 4", AnimationOptions =
+   ["fumar4"] = {"amb@world_human_smoking@female@idle_a", "idle_b", "Fumar 4", AnimationOptions =
    {
        Prop = 'prop_cs_ciggy_01',
        PropBone = 28422,
@@ -1718,7 +1788,7 @@ DP.PropEmotes = {
        PropBone = 18905,
        PropPlacement = {0.10,-0.25,0.0,95.0,190.0,180.0},
    }},
-   ["suitcase"] = {"missheistdocksprep1hold_cellphone", "static", "Suitcase", AnimationOptions =
+   ["maleta"] = {"missheistdocksprep1hold_cellphone", "static", "Maleta", AnimationOptions =
    {
        Prop = "prop_ld_suitcase_01",
        PropBone = 57005,
@@ -1726,7 +1796,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["suitcase2"] = {"missheistdocksprep1hold_cellphone", "static", "Suitcase 2", AnimationOptions =
+   ["maleta2"] = {"missheistdocksprep1hold_cellphone", "static", "Maleta 2", AnimationOptions =
    {
        Prop = "prop_security_case_01",
        PropBone = 57005,
@@ -1734,7 +1804,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["mugshot"] = {"mp_character_creation@customise@male_a", "loop", "Mugshot", AnimationOptions =
+   ["cartel"] = {"mp_character_creation@customise@male_a", "loop", "Cartel", AnimationOptions =
    {
        Prop = 'prop_police_id_board',
        PropBone = 58868,
@@ -1742,11 +1812,19 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["coffee"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee", AnimationOptions =
+   ["cafe"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Café", AnimationOptions =
    {
        Prop = 'p_amb_coffeecup_01',
        PropBone = 28422,
        PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["zumo"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Cup", AnimationOptions =
+   {
+       Prop = 'prop_food_bs_juice01',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, -0.1, 0.0, 0.0, 0.0},
        EmoteLoop = true,
        EmoteMoving = true,
    }},
@@ -1758,7 +1836,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["beer"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Beer", AnimationOptions =
+   ["cerveza"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Cerveza", AnimationOptions =
    {
        Prop = 'prop_amb_beer_bottle',
        PropBone = 28422,
@@ -1766,7 +1844,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["cup"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Cup", AnimationOptions =
+   ["vaso"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Vaso de plástico", AnimationOptions =
    {
        Prop = 'prop_plastic_cup_02',
        PropBone = 28422,
@@ -1781,7 +1859,7 @@ DP.PropEmotes = {
        PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
        EmoteMoving = true,
    }},
-   ["burger"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Burger", AnimationOptions =
+   ["hamburguesa"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Hamburguesa", AnimationOptions =
    {
        Prop = 'prop_cs_burger_01',
        PropBone = 18905,
@@ -1795,7 +1873,7 @@ DP.PropEmotes = {
        PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
        EmoteMoving = true,
    }},
-   ["soda"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Soda", AnimationOptions =
+   ["refresco"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Refresco", AnimationOptions =
    {
        Prop = 'prop_ecola_can',
        PropBone = 28422,
@@ -1803,14 +1881,14 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["egobar"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Ego Bar", AnimationOptions =
+   ["barraenergetica"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Barra energética", AnimationOptions =
    {
        Prop = 'prop_choc_ego',
        PropBone = 60309,
        PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
        EmoteMoving = true,
    }},
-   ["wine"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Wine", AnimationOptions =
+   ["vino"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Vino", AnimationOptions =
    {
        Prop = 'prop_drink_redwine',
        PropBone = 18905,
@@ -1818,7 +1896,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["flute"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Flute", AnimationOptions =
+   ["copa"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Copa de Champán", AnimationOptions =
    {
        Prop = 'prop_champ_flute',
        PropBone = 18905,
@@ -1826,7 +1904,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["champagne"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Champagne", AnimationOptions =
+   ["champan"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Champán", AnimationOptions =
    {
        Prop = 'prop_drink_champ',
        PropBone = 18905,
@@ -1834,7 +1912,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["cigar"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cigar", AnimationOptions =
+   ["cigarro"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cigarro", AnimationOptions =
    {
        Prop = 'prop_cigar_02',
        PropBone = 47419,
@@ -1842,7 +1920,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteDuration = 2600
    }},
-   ["cigar2"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cigar 2", AnimationOptions =
+   ["cigarro2"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cigarro 2", AnimationOptions =
    {
        Prop = 'prop_cigar_01',
        PropBone = 47419,
@@ -1850,7 +1928,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteDuration = 2600
    }},
-   ["guitar"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar", AnimationOptions =
+   ["guitarra"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitarra", AnimationOptions =
    {
        Prop = 'prop_acc_guitar_01',
        PropBone = 24818,
@@ -1858,7 +1936,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["guitar2"] = {"switch@trevor@guitar_beatdown", "001370_02_trvs_8_guitar_beatdown_idle_busker", "Guitar 2", AnimationOptions =
+   ["guitarra2"] = {"switch@trevor@guitar_beatdown", "001370_02_trvs_8_guitar_beatdown_idle_busker", "Guitarra 2", AnimationOptions =
    {
        Prop = 'prop_acc_guitar_01',
        PropBone = 24818,
@@ -1866,7 +1944,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["guitarelectric"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar Electric", AnimationOptions =
+   ["guitarraelectrica"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitarra eléctrica", AnimationOptions =
    {
        Prop = 'prop_el_guitar_01',
        PropBone = 24818,
@@ -1874,7 +1952,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["guitarelectric2"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar Electric 2", AnimationOptions =
+   ["guitarraelectrica2"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitarra eléctrica 2", AnimationOptions =
    {
        Prop = 'prop_el_guitar_03',
        PropBone = 24818,
@@ -1882,7 +1960,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["book"] = {"cellphone@", "cellphone_text_read_base", "Book", AnimationOptions =
+   ["libro"] = {"cellphone@", "cellphone_text_read_base", "Libro", AnimationOptions =
    {
        Prop = 'prop_novel_01',
        PropBone = 6286,
@@ -1890,7 +1968,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["bouquet"] = {"impexp_int-0", "mp_m_waremech_01_dual-0", "Bouquet", AnimationOptions =
+   ["ramo"] = {"impexp_int-0", "mp_m_waremech_01_dual-0", "Ramo", AnimationOptions =
    {
        Prop = 'prop_snow_flower_02',
        PropBone = 24817,
@@ -1898,7 +1976,23 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["teddy"] = {"impexp_int-0", "mp_m_waremech_01_dual-0", "Teddy", AnimationOptions =
+   ["bandeja"] = {"anim@heists@box_carry@", "idle", "Pat", AnimationOptions =
+   {
+       Prop = 'prop_food_bs_tray_03',
+       PropBone = 24817,
+       PropPlacement = {-0.20, 0.46, 0.026, -180.0, -90.0, 0.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }}, 
+   ["platopatoche"] = {"anim@heists@box_carry@", "idle", "Pat", AnimationOptions =
+   {
+       Prop = 'patoche_plat',
+       PropBone = 24817,
+       PropPlacement = {-0.20, 0.46, 0.026, -180.0, -90.0, 0.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }}, 
+   ["osito"] = {"impexp_int-0", "mp_m_waremech_01_dual-0", "Oso de peluche", AnimationOptions =
    {
        Prop = 'v_ilev_mr_rasberryclean',
        PropBone = 24817,
@@ -1906,7 +2000,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["backpack"] = {"move_p_m_zero_rucksack", "idle", "Backpack", AnimationOptions =
+   ["mochila"] = {"move_p_m_zero_rucksack", "idle", "Mochila", AnimationOptions =
    {
        Prop = 'p_michael_backpack_s',
        PropBone = 24818,
@@ -1914,7 +2008,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["clipboard"] = {"missfam4", "base", "Clipboard", AnimationOptions =
+   ["portapapeles"] = {"missfam4", "base", "Portapapeles", AnimationOptions =
    {
        Prop = 'p_amb_clipboard_01',
        PropBone = 36029,
@@ -1922,7 +2016,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["map"] = {"amb@world_human_tourist_map@male@base", "base", "Map", AnimationOptions =
+   ["mapa"] = {"amb@world_human_tourist_map@male@base", "base", "Mapa", AnimationOptions =
    {
        Prop = 'prop_tourist_map_01',
        PropBone = 28422,
@@ -1930,7 +2024,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["beg"] = {"amb@world_human_bum_freeway@male@base", "base", "Beg", AnimationOptions =
+   ["mendigo"] = {"amb@world_human_bum_freeway@male@base", "base", "Mendigo", AnimationOptions =
    {
        Prop = 'prop_beggers_sign_03',
        PropBone = 58868,
@@ -1938,7 +2032,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["makeitrain"] = {"anim@mp_player_intupperraining_cash", "idle_a", "Make It Rain", AnimationOptions =
+   ["tirardinero"] = {"anim@mp_player_intupperraining_cash", "idle_a", "Tirar dinero", AnimationOptions =
    {
        Prop = 'prop_anim_cash_pile_01',
        PropBone = 60309,
@@ -1951,7 +2045,7 @@ DP.PropEmotes = {
        PtfxInfo = Config.Languages[Config.MenuLanguage]['makeitrain'],
        PtfxWait = 500,
    }},
-   ["camera"] = {"amb@world_human_paparazzi@male@base", "base", "Camera", AnimationOptions =
+   ["camara"] = {"amb@world_human_paparazzi@male@base", "base", "Cámara", AnimationOptions =
    {
        Prop = 'prop_pap_camera_01',
        PropBone = 28422,
@@ -1964,7 +2058,7 @@ DP.PropEmotes = {
        PtfxInfo = Config.Languages[Config.MenuLanguage]['camera'],
        PtfxWait = 200,
    }},
-   ["champagnespray"] = {"anim@mp_player_intupperspray_champagne", "idle_a", "Champagne Spray", AnimationOptions =
+   ["lanzarchampan"] = {"anim@mp_player_intupperspray_champagne", "idle_a", "Lanzar champán", AnimationOptions =
    {
        Prop = 'ba_prop_battle_champ_open',
        PropBone = 28422,
@@ -1977,7 +2071,7 @@ DP.PropEmotes = {
        PtfxInfo = Config.Languages[Config.MenuLanguage]['spraychamp'],
        PtfxWait = 500,
    }},
-   ["joint"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Joint", AnimationOptions =
+   ["porro"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Porro", AnimationOptions =
    {
        Prop = 'p_cs_joint_02',
        PropBone = 47419,
@@ -1985,7 +2079,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteDuration = 2600
    }},
-   ["cig"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cig", AnimationOptions =
+   ["cigarrillo"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cigarrillo", AnimationOptions =
    {
        Prop = 'prop_amb_ciggy_01',
        PropBone = 47419,
@@ -1993,7 +2087,7 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteDuration = 2600
    }},
-   ["brief3"] = {"missheistdocksprep1hold_cellphone", "static", "Brief 3", AnimationOptions =
+   ["maletin3"] = {"missheistdocksprep1hold_cellphone", "static", "Maletín 3", AnimationOptions =
    {
        Prop = "prop_ld_case_01",
        PropBone = 57005,
@@ -2017,7 +2111,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["phonecall"] = {"cellphone@", "cellphone_call_listen_base", "Phone Call", AnimationOptions =
+   ["llamada"] = {"cellphone@", "cellphone_call_listen_base", "Llamada de teléfono", AnimationOptions =
    {
        Prop = "prop_npc_phone_02",
        PropBone = 28422,
@@ -2025,7 +2119,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["phone"] = {"cellphone@", "cellphone_text_read_base", "Phone", AnimationOptions =
+   ["telefono"] = {"cellphone@", "cellphone_text_read_base", "Teléfono", AnimationOptions =
    {
        Prop = "prop_npc_phone_02",
        PropBone = 28422,
@@ -2033,7 +2127,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["clean"] = {"timetable@floyd@clean_kitchen@base", "base", "Clean", AnimationOptions =
+   ["limpiar"] = {"timetable@floyd@clean_kitchen@base", "base", "Limpiar", AnimationOptions =
    {
        Prop = "prop_sponge_01",
        PropBone = 28422,
@@ -2041,7 +2135,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["clean2"] = {"amb@world_human_maid_clean@", "base", "Clean 2", AnimationOptions =
+   ["limpiar2"] = {"amb@world_human_maid_clean@", "base", "Limpiar 2", AnimationOptions =
    {
        Prop = "prop_sponge_01",
        PropBone = 28422,

@@ -2,7 +2,7 @@ Config = {
 -- Change the language of the menu here!.
 -- Note fr and de are google translated, if you would like to help out with translation / just fix it for your server check below and change translations yourself
 -- try en, fr, de or sv.
-	MenuLanguage = 'en',	
+	MenuLanguage = 'es',	
 -- Set this to true to enable some extra prints
 	DebugDisplay = false,
 -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
@@ -17,16 +17,19 @@ Config = {
 -- You can disable the Favorite emote keybinding here.
 	FavKeybindEnabled = true,
 	FavKeybind = 171, -- Get the button number here https://docs.fivem.net/game-references/controls/
+	AcceptKeybind = 246,
 -- You can change the header image for the f3 menu here
 -- Use a 512 x 128 image!
 -- NOte this might cause an issue of the image getting stuck on peoples screens
-	CustomMenuEnabled = false,
-	MenuImage = "https://i.imgur.com/kgzvDwQ.png",
+	CustomMenuEnabled = true,
+	--MenuImage = "https://recursos.mancos.es/emotespro_banner.png",
+	MenuImage = "https://recursos.mancos.es/emotespro_banner.png",
+	--https://recursos.tenderetecity.es/banner_animaciones.png
 -- You can change the menu position here
 	MenuPosition = "right", -- (left, right)
 -- You can disable the Ragdoll keybinding here.
-	RagdollEnabled = true,
-	RagdollKeybind = 303, -- Get the button number here https://docs.fivem.net/game-references/controls/
+	RagdollEnabled = false,
+	RagdollKeybind = nil, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Facial Expressions menu here.
 	ExpressionsEnabled = true,
 -- You can disable the Walking Styles menu here.
@@ -237,50 +240,48 @@ Config.Languages = {
         ['keybindsinfo'] = "Använd"
   },
   ['es'] = {
-        ['emotes'] = "Animaciones",
-        ['danceemotes'] = "🕺 Bailes",
-        ['propemotes'] = "📦 Objetos",
-        ['keybindemotes'] = "🌟 Favorita",
-        ['keybindinfo'] = "Selecciona una animacion como su favorita.",
-        ['rkeybind'] = "Reiniciar favorito",
-        ['prop2info'] = "❓ Animaciones de objetos al final.",
-        ['set'] = "Elegir (",
-        ['setboundemote'] = ") como tu animacion favorita?",
-        ['newsetemote'] = "~w~ es ahora tu animacion favorita, presiona ~g~[CapsLock]~w~ para usarla.",
-        ['cancelemote'] = "Cancelar animacion",
-        ['cancelemoteinfo'] = "~r~X~w~ Cancela la animacion actual.",
-        ['walkingstyles'] = "Formas de caminar",
-        ['resetdef'] = "Reiniciar a por defecto",
-        ['normalreset'] = "Normal (Reiniciar)",
-        ['moods'] = "Estados de animo",
-        ['infoupdate'] = "Informacion",
-        ['infoupdateav'] = "Informacion (Actualizacion disponible)",
-        ['infoupdateavtext'] = "Una actualizacion esta disponible, para conseguir la ultima version ingresa a ~y~https://github.com/andristum/dpemotes~w~",
-        ['suggestions'] = "Sugerencias?",
-        ['suggestionsinfo'] = "dullpear_dev' en el foro de FiveM para cualquier sugerencia! ✉️",
-        ['notvaliddance'] = "no es un baile valido.",
-        ['notvalidemote'] = "no es una animacion valida.",
-        ['nocancel'] = "No hay animacion para cancelar.",
-        ['maleonly'] = "Esta animacion es solo de hombre!",
-        ['emotemenucmd'] = "Escribe /emotemenu para abrir el menu.",
-        ['shareemotes'] = "👫 Animaciones compartidas",
-        ['shareemotesinfo'] = "Invita a una persona cercana para la animacion.",
-        ['sharedanceemotes'] = "🕺 Bailes compartidos",
-        ['notvalidsharedemote'] = "no es una animacion compartida valida.",
-        ['sentrequestto'] = "Solicitud enviada ~y~",
-        ['nobodyclose'] = "Nadie ~r~cerca~w~.",
-        ['doyouwanna'] = "~y~Y~w~ para aceptar, ~r~L~w~ para rechazar (~g~",
-        ['refuseemote'] = "Animacion rechazada.",
-        ['makenearby'] = "hacer que el jugador cercano juegue",
-        ['camera'] = "Presione ~y~G~w~ para usar el flash de la camara.",
-        ['makeitrain'] = "Presiona ~y~G~w~ para hacer llover.",
-        ['pee'] = "Mantiene ~y~G~w~ para mear.",
-        ['spraychamp'] = "Mantiene ~y~G~w~ rociar champán.",
+        ['emotes'] = "🔥 ~o~Animaciones",
+        ['danceemotes'] = "🕺 ~g~Bailes",
+        ['propemotes'] = "📦 ~b~Objetos",
+        ['keybindemotes'] = "🌟 ~y~Asignación de teclas",
+        ['keybindinfo'] = "~y~Selecciona una animación para asignarla a una tecla concreta.",
+        ['rkeybind'] = "♻️ ~g~Restaurar la asignación",
+        ['prop2info'] = "❓ ~r~Los objetos puedes localizarse al final",
+        ['set'] = "¿Usar (",
+        ['setboundemote'] = ") para ser tu animación asignada?",
+        ['newsetemote'] = "~w~ es ahora tu animación asignada, presiona ~g~CapsLock~w~ para usarla.",
+        ['cancelemote'] = "❌ ~r~Cancelar animación",
+        ['cancelemoteinfo'] = "~r~X~w~ Cancela la animación que esté en curso.",
+        ['walkingstyles'] = "🚶🏽 ~b~Forma de caminar",
+        ['resetdef'] = "Restaurar a por defecto",
+        ['normalreset'] = "Normal (restaurar)",
+        ['moods'] = "😀 ~p~Estado de ánimo",
+        ['infoupdate'] = "               💛 ~y~ENLACES DE INTERÉS 💛",
+        ['suggestions'] = "¿Sugerencias?",
+        ['suggestionsinfo'] = "'texto1 suggestionsinfo",
+        ['notvaliddance'] = "no es un baile válido.",
+        ['notvalidemote'] = "no es una animación válida.",
+        ['nocancel'] = "No hay animación para cancelar.",
+        ['maleonly'] = "¡Animación no disponible, lo sentimos!",
+        ['emotemenucmd'] = "Usa /emotemenu para abrir el menú.",
+        ['shareemotes'] = "👫 ~p~Animaciones compartidas",
+        ['shareemotesinfo'] = "~p~Invita a alguien cercano a realizar una animación conjunta.",
+        ['sharedanceemotes'] = "🕺💃🏽 ~b~Bailes Compartidos",
+        ['notvalidsharedemote'] = "no es una animación compartida válida.",
+        ['sentrequestto'] = "Has mandado la solicitud a ~y~",
+        ['nobodyclose'] = "No hay nadie suficientemente ~r~cerca~w~.",
+        ['doyouwanna'] = "~y~Y~w~ para aceptar, ~r~L~w~ para declinar (~g~",
+        ['refuseemote'] = "Animación rechazada.",
+        ['makenearby'] = "hace reproducir a la otra persona, la siguiente animación",
+        ['camera'] = "Pulsa ~y~G~w~ para usar el flash de la camara.",
+        ['makeitrain'] = "Pulsa ~y~G~w~ para hacer llover.",
+        ['pee'] = "Manten ~y~G~w~ para mear.",
+        ['spraychamp'] = "Manten ~y~G~w~ rociar champán.",
         ['bound'] = "Unida ",
         ['to'] = "a",
-        ['currentlyboundemotes'] = " Emotes vinculados actualmente:",
+        ['currentlyboundemotes'] = "Emotes vinculados actualmente:",
         ['notvalidkey'] = "no es una clave válida.",
-        ['keybinds'] = "🔢 Keybinds",
+        ['keybinds'] = "🔢 ~y~Keybinds",
         ['keybindsinfo'] = "Utilizar"
   }
 }
