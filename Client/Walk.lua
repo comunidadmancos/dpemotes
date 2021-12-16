@@ -1,6 +1,46 @@
+local latestWalkStyle = nil
+local crouched = false
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(5000)
+		playerPed = PlayerPedId()
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+		if (DoesEntityExist(playerPed) and not IsEntityDead(playerPed)) then
+			--DisableControlAction(0, 44, true) -- Disable cover
+			DisableControlAction(0,36,true)--INPUT_DUCK
+			if (not IsPauseMenuActive()) then
+				if (IsDisabledControlJustPressed(0,36)) then
+					RequestAnimSet("move_ped_crouched")
+					while (not HasAnimSetLoaded("move_ped_crouched")) do
+						Citizen.Wait(100)
+					end
+					if crouched then
+						if latestWalkStyle then
+							SetPedMovementClipset(playerPed,latestWalkStyle,0.2)
+						else
+							ResetPedMovementClipset(playerPed,0)
+						end
+						crouched = false
+					else
+						SetPedMovementClipset(playerPed,"move_ped_crouched",0.25)
+						crouched = true
+					end
+				end
+			end
+		end
+	end
+end)
+
 function WalkMenuStart(name)
   RequestWalking(name)
   SetPedMovementClipset(PlayerPedId(), name, 0.2)
+  latestWalkStyle = name
   RemoveAnimSet(name)
 end
 
