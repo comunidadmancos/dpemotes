@@ -175,6 +175,10 @@ function EmoteMenuStart(args, hard)
         if DP.Dances[name] ~= nil then
           if OnEmotePlay(DP.Dances[name]) then end
         end
+		elseif etype == "animals" then
+			if DP.AnimalEmotes[name] ~= nil then
+				if OnEmotePlay(DP.AnimalEmotes[name]) then end
+			end
     elseif etype == "props" then
         if DP.PropEmotes[name] ~= nil then
           if OnEmotePlay(DP.PropEmotes[name]) then end
@@ -210,6 +214,8 @@ function EmoteCommandStart(source, args, raw)
       if OnEmotePlay(DP.Emotes[name]) then end return
     elseif DP.Dances[name] ~= nil then
       if OnEmotePlay(DP.Dances[name]) then end return
+    elseif DP.AnimalEmotes[name] ~= nil then
+       if OnEmotePlay(DP.AnimalEmotes[name]) then end return
     elseif DP.PropEmotes[name] ~= nil then
       if OnEmotePlay(DP.PropEmotes[name]) then end return
     else
@@ -219,10 +225,16 @@ function EmoteCommandStart(source, args, raw)
 end
 
 function LoadAnim(dict)
+  if not DoesAnimDictExist(dict) then
+    return false
+  end
+
   while not HasAnimDictLoaded(dict) do
     RequestAnimDict(dict)
     Wait(10)
   end
+
+  return true
 end
 
 function LoadPropDict(model)
@@ -341,7 +353,10 @@ function OnEmotePlay(EmoteName)
     return end 
   end
 
-  LoadAnim(ChosenDict)
+  if not LoadAnim(ChosenDict) then
+    EmoteChatMessage("'".. ename .."' "..Config.Languages[lang]['notvalidemote'].."")
+    return
+  end
 
   if EmoteName.AnimationOptions then
     if EmoteName.AnimationOptions.EmoteLoop then
