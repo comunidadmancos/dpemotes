@@ -29,27 +29,34 @@ Citizen.CreateThread(function()
           SimpleNotify(PtfxInfo)
           PtfxNotif = true
       end
-      if IsControlPressed(0, 47) then
+      if IsControlPressed(0, Config.AcceptKeybind) then
         PtfxStart()
         Wait(PtfxWait)
         PtfxStop()
       end
     end
 
-    if Config.MenuKeybindEnabled then if IsControlPressed(0, Config.MenuKeybind) then OpenEmoteMenu() end end
-    if Config.EnableXtoCancel then if IsControlPressed(0, 73) then EmoteCancel() end end
+    --if Config.MenuKeybindEnabled then if IsControlPressed(0, Config.MenuKeybind) then OpenEmoteMenu() end end
+    --if Config.EnableXtoCancel then if IsControlPressed(0, 73) then EmoteCancel() end end
     Citizen.Wait(1)
   end
 end)
+
+if Config.MenuKeybindEnabled then
+	RegisterKeyMapping("emotemenu", "Menú de emotes", "keyboard", "f3")
+end
+
+if Config.EnableXtoCancel then
+	RegisterKeyMapping("e c2", "Cancelar animaciones", "keyboard", "x")
+end
 
 -----------------------------------------------------------------------------------------------------
 -- Commands / Events --------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
 Citizen.CreateThread(function()
-    TriggerEvent('chat:addSuggestion', '/e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
-    TriggerEvent('chat:addSuggestion', '/e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
-    TriggerEvent('chat:addSuggestion', '/emote', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
+    TriggerEvent('chat:addSuggestion', '/e', 'Reproduce una animación', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
+    TriggerEvent('chat:addSuggestion', '/emote', 'Reproduce una animación', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
     if Config.SqlKeybinding then
       TriggerEvent('chat:addSuggestion', '/emotebind', 'Bind an emote', {{ name="key", help="num4, num5, num6, num7. num8, num9. Numpad 4-9!"}, { name="emotename", help="dance, camera, sit or any valid emote."}})
       TriggerEvent('chat:addSuggestion', '/emotebinds', 'Check your currently bound emotes.')
@@ -85,12 +92,14 @@ end)
 
 function EmoteCancel()
 
+  ClearPedTasks(PlayerPedId())
+
   if ChosenDict == "MaleScenario" and IsInAnimation then
-    ClearPedTasksImmediately(PlayerPedId())
+	ClearPedTasksImmediately(PlayerPedId())
     IsInAnimation = false
     DebugPrint("Forced scenario exit")
   elseif ChosenDict == "Scenario" and IsInAnimation then
-    ClearPedTasksImmediately(PlayerPedId())
+	ClearPedTasksImmediately(PlayerPedId())
     IsInAnimation = false
     DebugPrint("Forced scenario exit")
   end
@@ -100,7 +109,6 @@ function EmoteCancel()
 
   if IsInAnimation then
     PtfxStop()
-    ClearPedTasks(GetPlayerPed(-1))
     DestroyAllProps()
     IsInAnimation = false
   end
@@ -108,9 +116,9 @@ end
 
 function EmoteChatMessage(args)
   if args == display then
-    TriggerEvent("chatMessage", "^5Help^0", {0,0,0}, string.format(""))
+    TriggerEvent("chatMessage", "^5Ayuda^0", {0,0,0}, string.format(""))
   else
-    TriggerEvent("chatMessage", "^5Help^0", {0,0,0}, string.format(""..args..""))
+    TriggerEvent("chatMessage", "^5Ayuda^0", {0,0,0}, string.format(""..args..""))
   end
 end
 
@@ -195,8 +203,8 @@ end
 function EmoteCommandStart(source, args, raw)
     if #args > 0 then
     local name = string.lower(args[1])
-    if name == "c" then
-        if IsInAnimation then
+    if name == "c" or name == "c2" then
+        if IsInAnimation or name == "c2" then
             EmoteCancel()
         else
             EmoteChatMessage(Config.Languages[lang]['nocancel'])
@@ -395,6 +403,8 @@ function OnEmotePlay(EmoteName)
     end
   end
 
+  --print(GetPlayerPed(-1), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
+
   TaskPlayAnim(GetPlayerPed(-1), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
   RemoveAnimDict(ChosenDict)
   IsInAnimation = true
@@ -423,3 +433,85 @@ function OnEmotePlay(EmoteName)
   end
   return true
 end
+
+Citizen.CreateThread(function()
+	local alreadyOpened, unarmedHash, mapHash = false, `WEAPON_UNARMED`, `prop_tourist_map_01`
+	while true do
+			Citizen.Wait(100)
+			playerPed = PlayerPedId()
+			if IsPauseMenuActive() and not alreadyOpened then
+        local cancel = false
+        for i = 1, 80 do
+          if not IsPauseMenuActive() then
+            cancel = true
+            break
+          end
+          Citizen.Wait(50)
+        end
+        if not cancel then
+					if IsPedArmed(playerPed, 7) then
+						SetCurrentPedWeapon(playerPed, unarmedHash, true)
+					end
+					OnEmotePlay(DP.PropEmotes["mapa"])
+					--TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_TOURIST_MAP", 0, false) -- Start the scenario
+					alreadyOpened = true
+					Citizen.Wait(5)
+					for _,v in pairs(PlayerProps) do
+						if GetEntityModel(v) == mapHash then
+							SetEntityCollision(v, false, true)
+						end
+					end
+        end
+			end
+			
+			if alreadyOpened and not IsPauseMenuActive() then
+					Citizen.Wait(800)
+					local count, mapFound = 0, false
+					for _,v in pairs(PlayerProps) do
+						if (not mapFound) and (GetEntityModel(v) == mapHash) then
+							DeleteEntity(v)
+							mapFound = true
+						end
+						count = count + 1
+					end
+					if mapFound and count == 1 then
+						PlayerHasProp = false
+					end
+					ClearPedSecondaryTask(playerPed)
+					Citizen.Wait(2200)
+					alreadyOpened = false
+			end
+	end
+end)
+
+RegisterNetEvent("EmoteStart")
+AddEventHandler("EmoteStart", function(name)
+    if name ~= nil then
+		if name == "c" or name == "c2" then
+			if IsInAnimation or name == "c2" then
+				EmoteCancel()
+			else
+				EmoteChatMessage(Config.Languages[lang]['nocancel'])
+			end
+			return
+		elseif name == "help" then
+			EmotesOnCommand()
+			return
+		end
+		if DP.Emotes[name] ~= nil then
+			if OnEmotePlay(DP.Emotes[name]) then
+			end
+			return
+		elseif DP.Dances[name] ~= nil then
+			if OnEmotePlay(DP.Dances[name]) then
+			end
+			return
+		elseif DP.PropEmotes[name] ~= nil then
+			if OnEmotePlay(DP.PropEmotes[name]) then
+			end
+			return
+		else
+			EmoteChatMessage("'"..name.."' "..Config.Languages[lang]['notvalidemote'].."")
+		end
+	end
+end)
